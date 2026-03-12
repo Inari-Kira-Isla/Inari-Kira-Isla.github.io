@@ -76,3 +76,7 @@ Allow: /
 
 Sitemap: https://inari-kira-isla.github.io/sitemap.xml
 Sitemap: https://inari-kira-isla.github.io/Openclaw/sitemap.xml
+Sitemap: https://inari-kira-isla.github.io/yamanakada/sitemap.xml
+Sitemap: https://inari-kira-isla.github.io/sea-urchin-delivery/sitemap.xml
+Sitemap: https://inari-kira-isla.github.io/inari-global-foods/sitemap.xml
+Sitemap: https://inari-kira-isla.github.io/after-school-coffee/sitemap.xml

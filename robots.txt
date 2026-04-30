@@ -26,6 +26,10 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
+# Amazon AI
+User-agent: Amazonbot
+Allow: /
+
 # Microsoft Bing AI
 User-agent: Bingbot
 Allow: /

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>跨國 AI 應用場景比較：簡報大綱</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Helvetica Neue", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: #0f1117;
+      color: #e8eaf0;
+      line-height: 1.7;
+    }
+
+    /* 頁面容器 */
+    .slide {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #1a1d2e;
+      border-radius: 16px;
+      padding: 48px 56px;
+      border: 1px solid #2a2d3e;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      page-break-after: always;
+    }
+
+    /* 頁碼標籤 */
+    .slide-number {
+      font-size: 12px;
+      color: #5b6080;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    /* 標題 */
+    h1 {
+      font-size: 2.4em;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 1.6em;
+      font-weight: 700;
+      color: #a78bfa;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #2a2d3e;
+    }
+
+    h3 {
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #60a5fa;
+      margin: 20px 0 10px;
+    }
+
+    .subtitle {
+      font-size: 1.15em;
+      color: #9ca3af;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      font-size: 0.85em;
+      color: #5b6080;
+      margin-top: 12px;
+    }
+
+    /* 表格 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.92em;
+    }
+
+    th {
+      background: #252840;
+      color: #a78bfa;
+      font-weight: 600;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 2px solid #2a2d3e;
+    }
+
+    td {
+      padding: 9px 14px;
+      border-bottom: 1px solid #232636;
+      color: #d1d5db;
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #1f2235; }
+
+    /* 強調區塊 */
+    .highlight-box {
+      background: #1f2235;
+      border-left: 4px solid #a78bfa;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+
+    .highlight-box.blue  { border-left-color: #60a5fa; }
+    .highlight-box.green { border-left-color: #34d399; }
+    .highlight-box.amber { border-left-color: #fbbf24; }
+    .highlight-box.red   { border-left-color: #f87171; }
+
+    .highlight-box h3 {
+      margin: 0 0 8px;
+      font-size: 1em;
+      color: #e8eaf0;
+    }
+
+    .highlight-box p, .highlight-box li {
+      font-size: 0.9em;
+      color: #9ca3af;
+    }
+
+    .highlight-box ul { padding-left: 18px; }
+    .highlight-box li { margin-bottom: 4px; }
+
+    /* 標籤 */
+    .badge {
+      display: inline-block;
+      font-size: 0.75em;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .badge-green  { background: #064e3b; color: #34d399; }
+    .badge-amber  { background: #451a03; color: #fbbf24; }
+    .badge-blue   { background: #1e3a5f; color: #60a5fa; }
+    .badge-purple { background: #3b1f6b; color: #a78bfa; }
+
+    /* 結論列表 */
+    .conclusion-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .conclusion-list li {
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      background: #1f2235;
+      border-radius: 8px;
+      font-size: 0.95em;
+      color: #d1d5db;
+    }
+
+    /* 封面特殊樣式 */
+    .cover {
+      text-align: center;
+      padding: 80px 56px;
+      background: linear-gradient(135deg, #1a1d2e 0%, #1f2040 100%);
+    }
+
+    .cover h1 {
+      font-size: 2.8em;
+      margin-bottom: 16px;
+    }
+
+    .cover .question {
+      font-size: 1.2em;
+      color: #fbbf24;
+      margin-top: 28px;
+      padding: 14px 24px;
+      border: 1px solid #fbbf24;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .country-flags {
+      font-size: 2.2em;
+      margin: 24px 0;
+      letter-spacing: 8px;
+    }
+
+    /* 行動建議 */
+    .action-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .action-card {
+      background: #1f2235;
+      border-radius: 10px;
+      padding: 16px;
+      border-top: 3px solid;
+    }
+
+    .action-card.now   { border-color: #34d399; }
+    .action-card.mid   { border-color: #fbbf24; }
+    .action-card.long  { border-color: #a78bfa; }
+
+    .action-card .label {
+      font-size: 0.75em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .action-card.now  .label { color: #34d399; }
+    .action-card.mid  .label { color: #fbbf24; }
+    .action-card.long .label { color: #a78bfa; }
+
+    .action-card p {
+      font-size: 0.85em;
+      color: #9ca3af;
+    }
+
+    /* 分隔線 */
+    hr {
+      border: none;
+      border-top: 1px solid #2a2d3e;
+      margin: 24px 0;
+    }
+
+    /* 頁尾 */
+    .footer {
+      text-align: center;
+      font-size: 0.78em;
+      color: #3d4060;
+      margin-top: 20px;
+    }
+
+    /* 列印優化 */
+    @media print {
+      body { background: white; color: black; }
+      .slide {
+        background: white;
+        border: 1px solid #ddd;
+        box-shadow: none;
+        margin: 0;
+        border-radius: 0;
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- 第 1 頁：封面 -->
+<div class="slide cover">
+  <div class="slide-number">SLIDE 01 / 10</div>
+  <div class="country-flags">🇰🇷 🇻🇳 🇹🇭 🇮🇩 🇷🇺</div>
+  <h1>跨國 AI 應用場景<br>比較研究</h1>
+  <p class="subtitle">韓國・越南・泰國・印尼・俄羅斯的 AI 布局全景</p>
+  <p class="meta">數據截至 2024–2025 ｜ 生成日期：2026-06-03</p>
+  <div class="question">哪些國家的 AI 機會被嚴重低估？</div>
+</div>
+
+<!-- 第 2 頁：研究範疇 -->
+<div class="slide">
+  <div class="slide-number">SLIDE 02 / 10</div>
+  <h2>研究範疇</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;">
+    <div class="highlight-box blue">
+      <h3>涵蓋國家（5 國）</h3>
+      <ul>
+        <li>🇰🇷 韓國</li>
+        <li>🇻🇳 越南</li>
+        <li>🇹🇭 泰國</li>
+        <li>🇮🇩 印尼</li>
+        <li>🇷🇺 俄羅斯</li>
+      </ul>
+    </div>
+    <div class="highlight-box">
+      <h3>涵蓋產業（6 大）</h3>
+      <ul>
+        <li>製造業</li>
+        <li>農業</li>
+        <li>能源</li>
+        <li>金融</li>
+        <li>旅遊</li>
+        <li>政府治理</li>
+      </ul>
+    </div>
+    <div class="highlight-box green">
+      <h3>分析時間軸</h3>
+      <ul>
+        <li>短期：2025–2027</li>
+        <li>中期：2027–2030</li>
+        <li>長期：2030+</li>
+      </ul>
+    </div>
+    <div class="highlight-box amber">
+      <h3>數據基礎</h3>
+      <ul>
+        <li>107 份國別研究報告</li>
+        <li>IMF・World Bank・OECD</li>
+        <li>各國統計局官方數據</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 第 3 頁：AI 就緒指數 -->
+<div class="slide">
+  <div class="slide-number">SLIDE 03 / 10</div>
+  <h2>AI 就緒指數排名</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>排名</th>
+        <th>國家</th>
+        <th>綜合指數</th>
+        <th>最強優勢</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>🥇 1</td>
+        <td>韓國 🇰🇷</td>
+        <td><strong style="color:#34d399">92 / 100</strong></td>
+        <td>半導體 + 人才 + 政策三強</td>
+      </tr>
+      <tr>
+        <td>🥈 2</td>
+        <td>俄羅斯 🇷🇺</td>
+        <td><strong style="color:#60a5fa">70 / 100</strong></td>
+        <td>技術底蘊深，但受制裁壓制</td>
+      </tr>
+      <tr>
+        <td>🥉 3</td>
+        <td>印尼 🇮🇩</td>
+        <td><strong style="color:#60a5fa">67 / 100</strong></td>
+        <td>人口紅利 + 資源稟賦</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>泰國 🇹🇭</td>
+        <td><strong style="color:#9ca3af">64 / 100</strong></td>
+        <td>服務業 AI 先行</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>越南 🇻🇳</td>
+        <td><strong style="color:#9ca3af">61 / 100</strong></td>
+        <td>成長最快，FDI 帶動</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="highlight-box amber">
+    <h3>⚠️ 關鍵提醒</h3>
+    <p>分數不代表機會大小——低分國家往往有更大的 AI 應用空間！</p>
+  </div>
+</div>
+
+<!-- 第 4 頁：六大產業速覽 -->
+<div class="slide">
+  <div class="slide-number">SLIDE 04 / 10</div>
+  <h2>六大產業：誰在哪裡領先？</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>產業</th>
+        <th>現在的領先者</th>
+        <th>最大潛力市場</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>🏭 製造業</td>
+        <td>🇰🇷 韓國（三星/現代）</td>
+        <td>🇻🇳 越南（FDI 工廠升級）</td>
+      </tr>
+      <tr>
+        <td>🌾 農業</td>
+        <td>🇷🇺 俄羅斯（大規模農田）</td>
+        <td>🇻🇳🇹🇭 越南+泰國（出口溯源）</td>
+      </tr>
+      <tr>
+        <td>⚡ 能源</td>
+        <td>🇰🇷 韓國（智慧電網）</td>
+        <td>🇮🇩 印尼（地熱 23.7GW）</td>
+      </tr>
+      <tr>
+        <td>💳 金融</td>
+        <td>🇰🇷 韓國（全面普及）</td>
+        <td>🇮🇩 印尼（清真 FinTech）</td>
+      </tr>
+      <tr>
+        <td>✈️ 旅遊</td>
+        <td>🇰🇷 韓國（免稅+K文化）</td>
+        <td>🇹🇭 泰國（醫療旅遊 AI）</td>
+      </tr>
+      <tr>
+        <td>🏛️ 政府治理</td>
+        <td>🇰🇷 韓國（UN電子政府 #3）</td>
+        <td>🇮🇩 印尼（群島連接挑戰）</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 第 5 頁：三個被低估的機會 -->
+<div class="slide">
+  <div class="slide-number">SLIDE 05 / 10</div>
+  <h2>三個最被低估的 AI 機會</h2>
+
+  <div class="highlight-box green">
+    <h3>🥇 印尼 × 清真 AI FinTech</h3>
+    <ul>
+      <li>2.3 億穆斯林用戶 = 全球最大清真市場</li>
+      <li>Gojek / Tokopedia 數位基礎已就位</li>
+      <li>現有清真金融 AI 解決方案幾乎空白</li>
+      <li>預估市場規模：<strong style="color:#34d399">50 億美元（短期）</strong></li>
+    </ul>
+  </div>
+
+  <div class="highlight-box blue">
+    <h3>🥈 泰國 × 醫療旅遊 AI 配對</h3>
+    <ul>
+      <li>67 家 JCI 國際認證醫院（東南亞最多）</li>
+      <li>AI 配對平台可連結全球病患 ↔ 頂尖醫院</li>
+      <li>韓國技術 + 泰國基礎 = 最佳合作組合</li>
+      <li>預估市場規模：<strong style="color:#60a5fa">25 億美元（短期）</strong></li>
+    </ul>
+  </div>
+
+  <div class="highlight-box amber">
+    <h3>🥉 俄羅斯 × 農業 AI</h3>
+    <ul>
+      <li>全球第 1 大小麥出口國</li>
+      <li>農業 AI 應用幾乎空白（制裁帶來反向機會）</li>
+      <li>衛星遙感 + AI 預測已有商業化基礎</li>
+      <li>預估市場規模：<strong style="color:#fbbf24">30 億美元（短期）</strong></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 第 6 頁：時間軸 -->
+<div class="slide">
+  <div class="slide-number">SLIDE 06 / 10</div>
+  <h2>三階段時間軸</h2>
+
+  <h3>短期（2025–2027）<span class="badge badge-green">現在入場</span></h3>
+  <table>
+    <thead><tr><th>國家</th><th>場景</th><th>預估規模</th></tr></thead>
+    <tbody>
+      <tr><td>🇰🇷 韓國</td><td>AI 半導體設計工具</td><td>200 億美元+</td></tr>
+      <tr><td>🇮🇩 印尼</td><td>清真認證 × 電商 AI</td><td>50 億美元</td></tr>
+      <tr><td>🇹🇭 泰國</td><td>醫療旅遊 AI 配對</td><td>25 億美元</td></tr>
+      <tr><td>🇻🇳 越南</td><td>製造業供應鏈 AI</td><td>15 億美元</td></tr>
+      <tr><td>🇷🇺 俄羅斯</td><td>農業氣象 AI 預測</td><td>30 億美元</td></tr>
+    </tbody>
+  </table>
+
+  <h3>中期（2027–2030）<span class="badge badge-amber">布局期</span></h3>
+  <table>
+    <thead><tr><th>國家</th><th>場景</th><th>預估規模</th></tr></thead>
+    <tbody>
+      <tr><td>🇰🇷 韓國</td><td>AI EV 電池 BMS</td><td>500 億美元+</td></tr>
+      <tr><td>🇮🇩 印尼</td><td>地熱 AI 管理</td><td>100 億美元</td></tr>
+      <tr><td>🇹🇭 泰國</td><td>EEC AI 工業區</td><td>120 億美元</td></tr>
+    </tbody>
+  </table>
+
+  <h3>長期（2030+）<span class="badge badge-purple">主題投資</span></h3>
+  <table>
+    <thead><tr><th>國家</th><th>場景</th><th>預估規模</th></tr></thead>
+    <tbody>
+      <tr><td>🇰🇷 韓國</td><td>人形機器人量產</td><td>兆級市場</td></tr>
+      <tr><td>🇮🇩 印尼</td><td>群島 AI 互聯互通</td><td>500 億美元</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 第 7 頁：跨國合作 -->
+<div class="slide">
+  <div class="slide-number">SLIDE 07 / 10</div>
+  <h2>跨國合作：最佳配對組合</h2>
+  <table>
+    <thead>
+      <tr><th>合作組合</th><th>AI 場景</th><th>為什麼強？</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>🇰🇷 + 🇮🇩</td><td>EV 電池 × AI BMS</td><td>韓國技術 × 印尼鎳礦</td></tr>
+      <tr><td>🇰🇷 + 🇹🇭</td><td>AI 醫療診斷 × 醫療旅遊</td><td>技術 × 基礎設施完美互補</td></tr>
+      <tr><td>🇻🇳 + 🇹🇭</td><td>農業 AI 溯源平台</td><td>咖啡/腰果 × 稻米，共享平台</td></tr>
+      <tr><td>🇮🇩 + 🇷🇺</td><td>清真 AI 平台</td><td>穆斯林消費市場 × 清真農產品</td></tr>
+      <tr><td>🇻🇳 + 🇮🇩 + 🇹🇭</td><td>再生能源 AI 互聯</td><td>東南亞三國能源 AI 共管</td></tr>
+      <tr><td>🇷🇺 + 🇨🇳 + 🇰🇷</td><td>北極物流 AI</td><td>NSR 航線三國整合</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 第 8 頁：投資優先排序 -->
+<div class="slide">
+  <div class="slide-number">SLIDE 08 / 10</div>
+  <h2>投資優先排序</h2>
+
+  <h3>✅ 立即可投（2025–2026）</h3>
+  <ol style="padding-left:20px; color:#d1d5db; font-size:0.92em; margin-bottom:16px;">
+    <li style="margin-bottom:6px;">🇰🇷 <strong>韓國 AI 半導體設計</strong> — 技術成熟，需求確定</li>
+    <li style="margin-bottom:6px;">🇮🇩 <strong>印尼清真電商 AI</strong> — 2.3 億用戶藍海</li>
+    <li style="margin-bottom:6px;">🇹🇭 <strong>泰國醫療旅遊 AI 平台</strong> — 現成醫院基礎</li>
+    <li style="margin-bottom:6px;">🇻🇳 <strong>越南製造業 AI 監控</strong> — FDI 帶動需求明確</li>
+  </ol>
+
+  <h3>⏳ 中期布局（2026–2028）</h3>
+  <ol start="5" style="padding-left:20px; color:#d1d5db; font-size:0.92em; margin-bottom:16px;">
+    <li style="margin-bottom:6px;">🇮🇩 <strong>印尼地熱 AI 管理</strong> — 23.7GW 潛力待解鎖</li>
+    <li style="margin-bottom:6px;">🇰🇷 <strong>韓國 AI 機器人</strong> — 現代/三星雙引擎驅動</li>
+    <li style="margin-bottom:6px;">🇻🇳 <strong>越南 AI 農業出口鏈</strong> — 精品農產品 AI 溯源</li>
+    <li style="margin-bottom:6px;">🇷🇺 <strong>俄羅斯北極 AI 物流</strong> — 高風險高回報</li>
+  </ol>
+
+  <h3>🔭 長線主題（2028+）</h3>
+  <ol start="9" style="padding-left:20px; color:#d1d5db; font-size:0.92em;">
+    <li style="margin-bottom:6px;">🇰🇷 人形機器人量產</li>
+    <li style="margin-bottom:6px;">🇮🇩 群島 AI 基礎建設</li>
+  </ol>
+</div>
+
+<!-- 第 9 頁：風險雷達 -->
+<div class="slide">
+  <div class="slide-number">SLIDE 09 / 10</div>
+  <h2>風險雷達</h2>
+  <table>
+    <thead>
+      <tr><th>風險類別</th><th>高風險國家</th><th>說明</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>🌐 地緣政治</td>
+        <td>🇷🇺 俄羅斯</td>
+        <td>制裁隨時可能升級，投資保護困難</td>
+      </tr>
+      <tr>
+        <td>🧠 人才外流</td>
+        <td>🇻🇳🇹🇭🇮🇩</td>
+        <td>AI 人才搶奪激烈，培養成本高</td>
+      </tr>
+      <tr>
+        <td>💻 算力不足</td>
+        <td>🇻🇳🇮🇩🇷🇺</td>
+        <td>基礎設施跟不上 AI 需求成長</td>
+      </tr>
+      <tr>
+        <td>🔗 中國 AI 依賴</td>
+        <td>🇻🇳🇷🇺</td>
+        <td>技術主權風險，政策可能突變</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box red">
+    <h3>⚠️ 俄羅斯特別提示</h3>
+    <p>制裁 + 人才外流 + 算力限制三重壓力並存，雖然機會真實，但進場需要嚴格的風險隔離機制。</p>
+  </div>
+</div>
+
+<!-- 第 10 頁：核心結論 -->
+<div class="slide">
+  <div class="slide-number">SLIDE 10 / 10</div>
+  <h2>核心結論</h2>
+
+  <ul class="conclusion-list">
+    <li>🇰🇷 <strong>韓國</strong> = AI 技術輸出國，適合做合作方而非純投資標的</li>
+    <li>🇮🇩 <strong>印尼</strong> = 人口 × 資源，AI 潛力被<strong style="color:#fbbf24">嚴重低估</strong></li>
+    <li>🇻🇳 <strong>越南</strong> = 五國中 AI 成長<strong style="color:#34d399">速度最快</strong>（低基數 + FDI）</li>
+    <li>🇹🇭 <strong>泰國</strong> = 服務業 AI 差異化（醫療旅遊），非製造</li>
+    <li>🇷🇺 <strong>俄羅斯</strong> = 路徑最獨特，機會與風險並存</li>
+  </ul>
+
+  <hr>
+
+  <h3>下一步行動建議</h3>
+  <div class="action-grid">
+    <div class="action-card now">
+      <div class="label">SHORT TERM</div>
+      <p>聚焦印尼清真 FinTech + 泰國醫療旅遊 AI</p>
+    </div>
+    <div class="action-card mid">
+      <div class="label">MID TERM</div>
+      <p>追蹤印尼地熱 AI + 越南製造升級</p>
+    </div>
+    <div class="action-card long">
+      <div class="label">LONG TERM</div>
+      <p>關注韓印 EV 電池 AI 合作進度</p>
+    </div>
+  </div>
+
+  <div class="footer" style="margin-top:32px;">
+    數據來源：IMF・World Bank・OECD・各國統計局・UN E-Government Survey 2024<br>
+    基於 107 份國別研究報告 ｜ /Users/igf/AI_Research/
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>榴槤食材品類研究報告（深度）</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Helvetica Neue", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: #0f1117;
+      color: #e8eaf0;
+      line-height: 1.75;
+    }
+
+    /* 頂部導覽 */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(15,17,23,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #2a2d3e;
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 100;
+    }
+    nav .logo { font-size: 1.1em; font-weight: 700; color: #fbbf24; }
+    nav .meta { font-size: 0.78em; color: #5b6080; }
+    nav .badge-mode {
+      margin-left: auto;
+      font-size: 0.72em;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 20px;
+      background: #1f2040;
+      color: #a78bfa;
+      border: 1px solid #a78bfa44;
+    }
+
+    /* 主容器 */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* 封面 */
+    .cover {
+      text-align: center;
+      padding: 80px 24px 60px;
+      background: linear-gradient(160deg, #1a1d2e 0%, #1a1808 100%);
+      border-bottom: 1px solid #2a2d3e;
+      margin-bottom: 48px;
+    }
+    .cover .emoji { font-size: 4em; margin-bottom: 16px; }
+    .cover h1 { font-size: 2.4em; font-weight: 800; color: #fff; margin-bottom: 12px; }
+    .cover .sub { font-size: 1.05em; color: #9ca3af; margin-bottom: 24px; }
+    .cover .stats {
+      display: inline-flex; gap: 24px; flex-wrap: wrap;
+      justify-content: center;
+      font-size: 0.85em; color: #6b7280;
+    }
+    .cover .stats span { background: #1f2235; padding: 6px 14px; border-radius: 8px; }
+    .cover .stats strong { color: #fbbf24; }
+
+    /* 目次 */
+    .toc {
+      background: #1a1d2e;
+      border: 1px solid #2a2d3e;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+    .toc h2 { font-size: 1em; color: #a78bfa; margin-bottom: 14px; letter-spacing: 1px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 6px; }
+    .toc a { color: #60a5fa; text-decoration: none; font-size: 0.9em; }
+    .toc a:hover { color: #a78bfa; }
+
+    /* 章節 */
+    section { margin-bottom: 56px; }
+    h2.sec-title {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: #a78bfa;
+      border-bottom: 2px solid #2a2d3e;
+      padding-bottom: 10px;
+      margin-bottom: 24px;
+    }
+    h3 {
+      font-size: 1.05em;
+      font-weight: 600;
+      color: #60a5fa;
+      margin: 20px 0 10px;
+    }
+    p { color: #d1d5db; margin-bottom: 12px; font-size: 0.93em; }
+
+    /* 表格 */
+    table { width: 100%; border-collapse: collapse; margin: 14px 0 20px; font-size: 0.88em; }
+    th { background: #252840; color: #a78bfa; font-weight: 600; padding: 10px 12px; text-align: left; border-bottom: 2px solid #2a2d3e; }
+    td { padding: 9px 12px; border-bottom: 1px solid #232636; color: #d1d5db; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #1f2235; }
+
+    /* 卡片 */
+    .card {
+      background: #1f2235;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 12px 0;
+      border-left: 4px solid #a78bfa;
+    }
+    .card.green  { border-left-color: #34d399; }
+    .card.blue   { border-left-color: #60a5fa; }
+    .card.amber  { border-left-color: #fbbf24; }
+    .card.red    { border-left-color: #f87171; }
+    .card h4 { font-size: 0.95em; font-weight: 700; margin-bottom: 8px; color: #e8eaf0; }
+    .card p, .card li { font-size: 0.88em; color: #9ca3af; }
+    .card ul { padding-left: 18px; }
+    .card li { margin-bottom: 4px; }
+
+    /* 警示標籤 */
+    .badge {
+      display: inline-block;
+      font-size: 0.75em;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin: 0 4px;
+      vertical-align: middle;
+    }
+    .badge-green  { background:#064e3b; color:#34d399; }
+    .badge-red    { background:#450a0a; color:#f87171; }
+    .badge-amber  { background:#451a03; color:#fbbf24; }
+    .badge-blue   { background:#1e3a5f; color:#60a5fa; }
+
+    /* 品種卡片網格 */
+    .variety-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+      margin: 16px 0;
+    }
+    .variety-card {
+      background: #1f2235;
+      border-radius: 10px;
+      padding: 16px;
+      border: 1px solid #2a2d3e;
+    }
+    .variety-card .v-name { font-size: 1em; font-weight: 700; color: #fbbf24; margin-bottom: 4px; }
+    .variety-card .v-code { font-size: 0.78em; color: #5b6080; margin-bottom: 10px; }
+    .variety-card .v-row { display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 0.83em; }
+    .variety-card .v-label { color: #6b7280; }
+    .variety-card .v-val { color: #d1d5db; }
+    .stars { color: #fbbf24; letter-spacing: -2px; }
+
+    /* 風險表格顏色 */
+    .risk-high  { color: #f87171; font-weight: 600; }
+    .risk-mid   { color: #fbbf24; font-weight: 600; }
+    .risk-low   { color: #34d399; font-weight: 600; }
+
+    /* 洞察區塊 */
+    .insight {
+      background: linear-gradient(135deg, #1f2040, #1a1d2e);
+      border: 1px solid #a78bfa44;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 20px 0;
+    }
+    .insight .i-num { font-size: 2em; font-weight: 900; color: #a78bfa; opacity: 0.4; }
+    .insight h4 { font-size: 1em; font-weight: 700; color: #e8eaf0; margin: 4px 0 10px; }
+    .insight p { font-size: 0.9em; color: #9ca3af; }
+
+    /* 驗證摘要 */
+    .verify-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .verify-card {
+      background: #1f2235;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .verify-card .v-count { font-size: 2em; font-weight: 800; margin-bottom: 4px; }
+    .verify-card .v-label { font-size: 0.8em; color: #6b7280; }
+    .verify-card.high .v-count { color: #34d399; }
+    .verify-card.mid  .v-count { color: #fbbf24; }
+    .verify-card.low  .v-count { color: #f87171; }
+
+    /* 頁尾 */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 0.78em;
+      color: #3d4060;
+      border-top: 1px solid #2a2d3e;
+    }
+
+    /* 響應式 */
+    @media (max-width: 640px) {
+      .cover h1 { font-size: 1.7em; }
+      .verify-grid { grid-template-columns: 1fr; }
+      .variety-grid { grid-template-columns: 1fr; }
+      nav { padding: 10px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">🌐 AI Research</span>
+  <span class="meta">榴槤 深度研究報告 ／ 2026-06-03</span>
+  <span class="badge-mode">DEEP MODE × 8 subagents</span>
+</nav>
+
+<!-- 封面 -->
+<div class="cover">
+  <div class="emoji">🌿</div>
+  <h1>榴槤 食材品類研究報告</h1>
+  <p class="sub">東南亞「果王」× 全球年貿易額逾 70 億美元</p>
+  <div class="stats">
+    <span>章節數 <strong>14 章</strong></span>
+    <span>來源數 <strong>100+</strong></span>
+    <span>Subagents <strong>8 個</strong></span>
+    <span>涵蓋國家 <strong>泰 ／ 馬 ／ 越 ／ 印 ／ 中</strong></span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- 目次 -->
+<div class="toc">
+  <h2>📋 目次</h2>
+  <ol>
+    <li><a href="#s1">概述與歷史背景</a></li>
+    <li><a href="#s2">品種分類</a></li>
+    <li><a href="#s3">主要產地與產季</a></li>
+    <li><a href="#s4">品質評估標準與選購技巧</a></li>
+    <li><a href="#s5">採購指南</a></li>
+    <li><a href="#s6">加工製品</a></li>
+    <li><a href="#s7">保存與冷鏈運輸</a></li>
+    <li><a href="#s8">市場概況與價格趨勢</a></li>
+    <li><a href="#s9">健康功效與營養成分</a></li>
+    <li><a href="#s10">爭議與禁忌</a></li>
+    <li><a href="#s11">商業機會與投資分析</a></li>
+    <li><a href="#s12">氣候變遷對產業的影響</a></li>
+    <li><a href="#s13">中國市場擴張趨勢</a></li>
+    <li><a href="#s14">未來展望</a></li>
+    <li><a href="#s15">深度分析：交叉驗證與核心洞察</a></li>
+  </ol>
+</div>
+
+<!-- 1. 概述 -->
+<section id="s1">
+  <h2 class="sec-title">1. 概述與歷史背景</h2>
+  <p>榴槤（學名 <em>Durio zibethinus</em>）起源於婆羅洲與蘇門答臘島嶼，「durian」一詞源自馬來語「duri」（刺）。</p>
+  <table>
+    <thead><tr><th>時期</th><th>重要事件</th></tr></thead>
+    <tbody>
+      <tr><td>1430 年代</td><td>威尼斯旅行家尼科洛·德·孔蒂最早的西方文獻記錄</td></tr>
+      <tr><td>17 世紀</td><td>荷蘭博物學家 Rumphius 完成首部完整植物學記錄</td></tr>
+      <tr><td>18 世紀</td><td>林奈正式命名 <em>Durio zibethinus</em></td></tr>
+      <tr><td>19 世紀</td><td>英國博物學家華萊士讚譽「百果之王」，留下著名品評文字</td></tr>
+    </tbody>
+  </table>
+  <div class="card amber">
+    <h4>📊 當代市場規模</h4>
+    <ul>
+      <li>2024 年中國榴槤進口額：<strong>70 億美元</strong>（歷史新高）</li>
+      <li>全球市場 2024 年估值：約 <strong>249–305 億美元</strong></li>
+      <li>預計 2033 年市場規模：<strong>468 億美元</strong></li>
+      <li>全球出口榴槤約 <strong>95%</strong> 流向中國市場</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 2. 品種 -->
+<section id="s2">
+  <h2 class="sec-title">2. 品種分類</h2>
+  <p>馬來西亞農業部自 1934 年起實施「D 號碼」登記制度，目前已登記超過 <strong>200 個品種</strong>，市場常見流通者約 15–20 種。</p>
+
+  <h3>馬來西亞頂級品種</h3>
+  <div class="variety-grid">
+    <div class="variety-card">
+      <div class="v-name">🏆 貓山王（Musang King）</div>
+      <div class="v-code">D197 ／ 吉蘭丹州</div>
+      <div class="v-row"><span class="v-label">果肉顏色</span><span class="v-val">金黃</span></div>
+      <div class="v-row"><span class="v-label">甜度</span><span class="stars">★★★★★</span></div>
+      <div class="v-row"><span class="v-label">濃郁度</span><span class="stars">★★★★★</span></div>
+      <div class="v-row"><span class="v-label">市場定位</span><span class="v-val">頂級旗艦</span></div>
+      <p style="margin-top:10px;font-size:0.82em;color:#6b7280">辨識：底部五角星形裂紋</p>
+    </div>
+    <div class="variety-card">
+      <div class="v-name">💎 黑刺（Black Thorn）</div>
+      <div class="v-code">D200 ／ 馬來西亞檳城</div>
+      <div class="v-row"><span class="v-label">果肉顏色</span><span class="v-val">深橙</span></div>
+      <div class="v-row"><span class="v-label">甜度</span><span class="stars">★★★★★</span></div>
+      <div class="v-row"><span class="v-label">濃郁度</span><span class="stars">★★★★★</span></div>
+      <div class="v-row"><span class="v-label">市場定位</span><span class="v-val">稀缺珍品</span></div>
+      <p style="margin-top:10px;font-size:0.82em;color:#6b7280">辨識：底部黑色花萼 ＋ 縱向深色條紋</p>
+    </div>
+    <div class="variety-card">
+      <div class="v-name">🦐 紅蝦（Red Prawn）</div>
+      <div class="v-code">D175 ／ 馬來西亞檳城</div>
+      <div class="v-row"><span class="v-label">果肉顏色</span><span class="v-val">橙紅/粉橘</span></div>
+      <div class="v-row"><span class="v-label">甜度</span><span class="stars">★★★★</span></div>
+      <div class="v-row"><span class="v-label">濃郁度</span><span class="stars">★★★★</span></div>
+      <div class="v-row"><span class="v-label">市場定位</span><span class="v-val">特殊風味</span></div>
+      <p style="margin-top:10px;font-size:0.82em;color:#6b7280">風味帶漿果、紅酒、香草層次</p>
+    </div>
+    <div class="variety-card">
+      <div class="v-name">🎋 竹腳（Tekka）</div>
+      <div class="v-code">D160 ／ 馬來西亞</div>
+      <div class="v-row"><span class="v-label">果肉顏色</span><span class="v-val">橙黃</span></div>
+      <div class="v-row"><span class="v-label">甜度</span><span class="stars">★★★★</span></div>
+      <div class="v-row"><span class="v-label">濃郁度</span><span class="stars">★★★★</span></div>
+      <div class="v-row"><span class="v-label">市場定位</span><span class="v-val">稀缺清甜</span></div>
+      <p style="margin-top:10px;font-size:0.82em;color:#6b7280">辨識：果腔中央有黃色粒狀物</p>
+    </div>
+    <div class="variety-card">
+      <div class="v-name">🌙 蘇丹王（D24）</div>
+      <div class="v-code">D24 ／ 馬來西亞</div>
+      <div class="v-row"><span class="v-label">果肉顏色</span><span class="v-val">淡黃</span></div>
+      <div class="v-row"><span class="v-label">甜度</span><span class="stars">★★★</span></div>
+      <div class="v-row"><span class="v-label">濃郁度</span><span class="stars">★★★</span></div>
+      <div class="v-row"><span class="v-label">市場定位</span><span class="v-val">大眾親民</span></div>
+      <p style="margin-top:10px;font-size:0.82em;color:#6b7280">先苦後甜，常作甜品加工原料</p>
+    </div>
+    <div class="variety-card">
+      <div class="v-name">🛏️ 金枕頭（Monthong）</div>
+      <div class="v-code">泰國 ／ 全球流通量最大</div>
+      <div class="v-row"><span class="v-label">果肉顏色</span><span class="v-val">淡黃</span></div>
+      <div class="v-row"><span class="v-label">甜度</span><span class="stars">★★★</span></div>
+      <div class="v-row"><span class="v-label">濃郁度</span><span class="stars">★★</span></div>
+      <div class="v-row"><span class="v-label">採後保存</span><span class="v-val">20 天</span></div>
+      <p style="margin-top:10px;font-size:0.82em;color:#6b7280">佔泰國種植面積 41%，種子退化近乎無籽</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 產地 -->
+<section id="s3">
+  <h2 class="sec-title">3. 主要產地與產季</h2>
+  <table>
+    <thead><tr><th>國家</th><th>種植面積</th><th>年產量</th><th>主力品種</th><th>特點</th></tr></thead>
+    <tbody>
+      <tr><td>🇹🇭 泰國</td><td>約 186,905 公頃</td><td>約 78 萬噸</td><td>金枕頭（99%）</td><td>全球最大出口國</td></tr>
+      <tr><td>🇲🇾 馬來西亞</td><td>超過 72,391 公頃</td><td>約 21–45.5 萬噸</td><td>貓山王、D24</td><td>品質代名詞，2024年取得鮮果出口中國資格</td></tr>
+      <tr><td>🇻🇳 越南</td><td>每年成長 +25%</td><td>快速擴張中</td><td>Ri6、嫁接貓山王</td><td>新興產地，2024年對中出口 29.4 億美元</td></tr>
+      <tr><td>🇮🇩 印尼</td><td>最大生產國</td><td>幾乎全供國內</td><td>本地品種</td><td>出口量極低</td></tr>
+    </tbody>
+  </table>
+
+  <h3>產季時間表</h3>
+  <table>
+    <thead><tr><th>產地</th><th>主要產季</th><th>次要產季</th></tr></thead>
+    <tbody>
+      <tr><td>泰國（東部）</td><td>4月—6月</td><td>9月（南部延伸）</td></tr>
+      <tr><td>馬來西亞半島</td><td>6月—8月（高峰 6–7 月）</td><td>12月—1月</td></tr>
+      <tr><td>馬來西亞沙巴</td><td>6月—8月</td><td>11月—12月</td></tr>
+      <tr><td>越南</td><td>5月—7月</td><td>—</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 4. 選購 -->
+<section id="s4">
+  <h2 class="sec-title">4. 品質評估標準與選購技巧</h2>
+  <div class="card blue">
+    <h4>👁️ 外觀評估</h4>
+    <ul>
+      <li>外殼顏色偏黃褐色，果底出現自然裂縫代表熟透</li>
+      <li>果蒂粗壯新鮮、淺褐色為佳；乾枯發黑代表採收時間過長</li>
+      <li>打開後鮮亮金黃者通常較甜；邊緣灰色調可能帶苦味</li>
+    </ul>
+  </div>
+  <div class="card green">
+    <h4>👂 敲聲辨別法（最常用）</h4>
+    <ul>
+      <li>輕搖聽到種子「咕咕」聲 → 果肉飽滿成熟</li>
+      <li>搖動聲音過大 → 果肉收縮，可能過熟</li>
+      <li>木棒輕敲沉悶如鼓 → 飽滿；空洞發響 → 空心問題</li>
+    </ul>
+  </div>
+  <div class="card amber">
+    <h4>👃 氣味辨別</h4>
+    <ul>
+      <li>清新青草氣息 → 甜度較高</li>
+      <li>完全無氣味 → 尚未成熟，無法食用</li>
+      <li>酒精發酵味 → 已過熟，果肉可能變質</li>
+    </ul>
+  </div>
+  <table>
+    <thead><tr><th>類型</th><th>口感</th><th>保存期</th><th>適用場景</th></tr></thead>
+    <tbody>
+      <tr><td>新鮮整顆</td><td>最佳</td><td>1–2 天（室溫）</td><td>直接品嚐</td></tr>
+      <tr><td>液態氮急凍（IQF）</td><td>接近新鮮</td><td>6–18 個月</td><td>高端加工/出口</td></tr>
+      <tr><td>一般冷凍</td><td>較軟爛</td><td>6–12 個月</td><td>製作甜品、奶昔</td></tr>
+      <tr><td>真空包裝冷凍</td><td>優於一般冷凍</td><td>可達 18 個月+</td><td>餐飲業採購</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 5. 採購 -->
+<section id="s5">
+  <h2 class="sec-title">5. 採購指南</h2>
+  <table>
+    <thead><tr><th>管道</th><th>適合規模</th><th>最小訂購量</th><th>優點</th></tr></thead>
+    <tbody>
+      <tr><td>產地直採</td><td>大型採購</td><td>1 貨櫃（15–20 噸）</td><td>成本最低</td></tr>
+      <tr><td>代理商/進口商</td><td>中小型餐飲</td><td>1,000–5,000 公斤</td><td>手續簡便</td></tr>
+      <tr><td>Tridge / Alibaba</td><td>評估比價</td><td>彈性</td><td>多家比較</td></tr>
+    </tbody>
+  </table>
+
+  <h3>批發價格參考（2025 年）</h3>
+  <table>
+    <thead><tr><th>市場</th><th>批發價/公斤</th><th>零售價/公斤</th><th>備註</th></tr></thead>
+    <tbody>
+      <tr><td>馬來西亞本地</td><td>USD 3.27</td><td>MYR 32–39</td><td>—</td></tr>
+      <tr><td>台灣批發</td><td>NT$137</td><td>NT$410</td><td>約 3 倍價差</td></tr>
+      <tr><td>中國（頂級貓山王）</td><td>—</td><td>USD 15+</td><td>對馬來西亞批發逾 4 倍</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 6. 加工 -->
+<section id="s6">
+  <h2 class="sec-title">6. 加工製品</h2>
+  <table>
+    <thead><tr><th>品類</th><th>代表產品</th><th>市場特點</th></tr></thead>
+    <tbody>
+      <tr><td>冰品</td><td>貓山王榴槤冰淇淋</td><td>不添加香精，以真實果肉為主</td></tr>
+      <tr><td>糕餅</td><td>榴槤月餅（冰皮）</td><td>中秋季節高人氣，全程冷鏈維持</td></tr>
+      <tr><td>甜點</td><td>榴槤泡芙</td><td>東南亞最具代表性的榴槤加工甜點</td></tr>
+      <tr><td>加工原料</td><td>榴槤醬、榴槤泥、榴槤粉</td><td>烘焙、飲品工業化原料</td></tr>
+    </tbody>
+  </table>
+  <div class="card red">
+    <h4>⚠️ 金胺 O 添加劑問題</h4>
+    <p>中國自 2025 年 1 月起要求泰國榴槤附有「不含金胺 O（Auramine O）」的認證文件。金胺 O 為工業用螢光染料，對人體有肝毒性與潛在致癌性，部分出口商用以讓果肉外觀更鮮黃。</p>
+  </div>
+</section>
+
+<!-- 7. 保存 -->
+<section id="s7">
+  <h2 class="sec-title">7. 保存與冷鏈運輸</h2>
+  <table>
+    <thead><tr><th>保存條件</th><th>保存時間</th><th>備註</th></tr></thead>
+    <tbody>
+      <tr><td>室溫（整顆帶殼）</td><td>1–2 天</td><td>落果後快速熟透</td></tr>
+      <tr><td>冷藏（去殼，密封）</td><td>2–5 天</td><td>需密封防氣味擴散</td></tr>
+      <tr><td>一般冷凍</td><td>1–2 個月</td><td>建議真空袋密封</td></tr>
+      <tr><td>液態氮急速冷凍（-110°C）</td><td>6–18 個月</td><td>商業最優保存法</td></tr>
+    </tbody>
+  </table>
+  <p>冷鏈標準：鮮果 0–7°C 全程維持；冷凍加工品 -18°C 以下。</p>
+</section>
+
+<!-- 8. 市場 -->
+<section id="s8">
+  <h2 class="sec-title">8. 市場概況與價格趨勢</h2>
+  <table>
+    <thead><tr><th>年份</th><th>中國進口量</th><th>中國進口額</th></tr></thead>
+    <tbody>
+      <tr><td>2021</td><td>82.15 萬公噸</td><td>42.05 億美元</td></tr>
+      <tr><td>2022</td><td>82.5 萬公噸</td><td>40.4 億美元</td></tr>
+      <tr><td>2023</td><td>約 143 萬公噸</td><td>67 億美元以上</td></tr>
+      <tr><td><strong>2024（歷史新高）</strong></td><td><strong>156 萬公噸</strong></td><td><strong>69.9 億美元</strong></td></tr>
+    </tbody>
+  </table>
+  <div class="card red">
+    <h4>⚠️ 2025 年「榴槤海嘯」</h4>
+    <p>馬來西亞 2025 年末收購價格暴跌超過 <strong>60%</strong>，創 10 年新低，顯示農產品價格波動風險極高。</p>
+  </div>
+</section>
+
+<!-- 9. 健康 -->
+<section id="s9">
+  <h2 class="sec-title">9. 健康功效與營養成分</h2>
+  <table>
+    <thead><tr><th>營養素</th><th>每 100 克含量</th></tr></thead>
+    <tbody>
+      <tr><td>熱量</td><td>147 大卡</td></tr>
+      <tr><td>碳水化合物</td><td>約 27 克</td></tr>
+      <tr><td>糖分</td><td>約 18.4 克（高 GI，>70）</td></tr>
+      <tr><td>脂肪</td><td>約 5 克</td></tr>
+      <tr><td>膳食纖維</td><td>3–4 克</td></tr>
+      <tr><td>維生素 B1</td><td>約 0.37 mg（約 31% DV）</td></tr>
+      <tr><td>維生素 C</td><td>約 19.7 mg（約 22% DV）</td></tr>
+      <tr><td>鉀</td><td>約 436 mg（高於香蕉）</td></tr>
+    </tbody>
+  </table>
+  <table>
+    <thead><tr><th>禁忌族群</th><th>風險</th></tr></thead>
+    <tbody>
+      <tr><td>糖尿病患者</td><td><span class="risk-high">高</span> — 高 GI，快速升血糖</td></tr>
+      <tr><td>腎臟病患者</td><td><span class="risk-high">高</span> — 高鉀，加重腎臟負擔</td></tr>
+      <tr><td>心血管疾病患者</td><td><span class="risk-mid">中</span> — 與酒精同食風險</td></tr>
+      <tr><td>孕婦</td><td><span class="risk-low">低</span> — 適量即可</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 10. 爭議 -->
+<section id="s10">
+  <h2 class="sec-title">10. 爭議與禁忌</h2>
+  <h3>公共場所禁令</h3>
+  <table>
+    <thead><tr><th>地區</th><th>禁令場所</th><th>罰款</th></tr></thead>
+    <tbody>
+      <tr><td>新加坡（1988 年立法）</td><td>地鐵、公車、計程車</td><td><span class="risk-high">新幣 500 元</span>（約台幣 12,000 元）</td></tr>
+      <tr><td>新加坡酒店</td><td>酒店房間及公共區域</td><td>新幣 200–250 元</td></tr>
+      <tr><td>泰國曼谷 BTS/MRT</td><td>大眾運輸</td><td>未明確公告</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card green">
+    <h4>✅ 榴槤與酒精——科學真相</h4>
+    <ul>
+      <li>日本筑波大學（2009）：榴槤含硫化合物可抑制乙醛去氫酶（ALDH）活性達 70%</li>
+      <li>❌ <strong>「榴槤＋酒精＝致命」</strong>——已被科學反駁：實驗中無任何小鼠死亡，無人體死亡案例</li>
+      <li>⚠️ 仍會引起類嚴重宿醉不適，心臟病患者需謹慎</li>
+    </ul>
+  </div>
+
+  <div class="card red">
+    <h4>⚠️ 越南榴槤食品安全問題（近期）</h4>
+    <ul>
+      <li>2025 年 5 月：台灣驗出 43,785 公斤越南榴槤<strong>重金屬鎘超標</strong>，退運</li>
+      <li>2024 年 8 月：15,900 公斤農藥殘留超標，退運</li>
+      <li>台灣食藥署現已對越南榴槤實施 <strong>100% 逐批查驗</strong></li>
+    </ul>
+  </div>
+
+  <div class="card amber">
+    <h4>🚨 假冒貓山王問題</h4>
+    <ul>
+      <li>2024 年 10 月：馬來西亞一公司主管遭詐騙 <strong>RM 260 萬（約台幣 1,800 萬元）</strong></li>
+      <li>泰國、越南、海南島產品假冒馬來西亞貓山王在中國市場氾濫</li>
+      <li>對策：認明 FAMA <strong>QR Code 追蹤系統</strong>驗真</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 11. 商業 -->
+<section id="s11">
+  <h2 class="sec-title">11. 商業機會與投資分析</h2>
+  <table>
+    <thead><tr><th>案例</th><th>地區</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td>榴槤自助餐（200 道菜式）</td><td>深圳廣東</td><td>定價 199 人民幣，Douyin 爆紅</td></tr>
+      <tr><td>榴槤雞火鍋</td><td>中國各地</td><td>累計售出超過 <strong>222 萬份</strong></td></tr>
+      <tr><td>榴槤放題</td><td>香港各大酒店</td><td>每年夏季座位供不應求</td></tr>
+      <tr><td>五星級榴槤主題酒店</td><td>馬來西亞檳城</td><td>葉子楣投資，2027 年預計開幕</td></tr>
+    </tbody>
+  </table>
+  <p>Douyin 榴槤相關話題累計超過 <strong style="color:#fbbf24">12.4 億</strong>次播放。</p>
+
+  <h3>農場投資分析</h3>
+  <table>
+    <thead><tr><th>項目</th><th>數據</th><th>備註</th></tr></thead>
+    <tbody>
+      <tr><td>首次商業收成</td><td>種植後 5–7 年</td><td>貓山王</td></tr>
+      <tr><td>最高產期</td><td>第 7–15 年</td><td>—</td></tr>
+      <tr><td>初始資本（10 英畝）</td><td>馬幣 75–150 萬令吉</td><td>約台幣 510–1,020 萬元</td></tr>
+      <tr><td>業者宣傳報酬率</td><td>年化 19–22%</td><td><span class="risk-high">⚠️ 行銷資料，需獨立核實</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 12. 氣候 -->
+<section id="s12">
+  <h2 class="sec-title">12. 氣候變遷對產業的影響</h2>
+  <div class="card">
+    <h4>🌡️ 榴槤的氣候需求（極為嚴苛）</h4>
+    <ul>
+      <li>年均溫：<strong>28°C</strong></li>
+      <li>年降雨量：<strong>2,525 毫米</strong></li>
+      <li>超過 35°C 或日夜溫差過小，授粉率即顯著下降</li>
+    </ul>
+  </div>
+  <div class="card red">
+    <h4>⚠️ 2024 年泰國案例</h4>
+    <ul>
+      <li>聖嬰現象導致泰國榴槤總產量較前年<strong>下降 18%</strong>（15 年最大降幅）</li>
+      <li>南部產區更驟降 25%</li>
+      <li>中國退運 <strong>64 噸</strong>泰國榴槤並銷毀，泰國政府暫停 <strong>26 家出口商</strong>資格</li>
+    </ul>
+  </div>
+  <table>
+    <thead><tr><th>技術</th><th>說明</th><th>現況</th></tr></thead>
+    <tbody>
+      <tr><td>IoT + AI 智慧灌溉</td><td>依果實發育階段即時計算需水量</td><td>泰國皇家農場驗證中</td></tr>
+      <tr><td>AI 精準施肥</td><td>改良型 RBF 神經網路</td><td>2024 年學術論文發表</td></tr>
+      <tr><td>基因體育種</td><td>耐熱、低氣味新品種研發</td><td>貓山王基因組 2025 年完整解碼</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 13. 中國市場 -->
+<section id="s13">
+  <h2 class="sec-title">13. 中國市場擴張趨勢</h2>
+  <table>
+    <thead><tr><th>供應國</th><th>2024 出口額</th><th>市佔率</th><th>年變化</th></tr></thead>
+    <tbody>
+      <tr><td>🇹🇭 泰國</td><td>40.1 億美元</td><td>57.4%</td><td>從 68% 下降</td></tr>
+      <tr><td>🇻🇳 越南</td><td>29.4 億美元</td><td>42.1%</td><td>從 33% 上升</td></tr>
+      <tr><td>🇲🇾 馬來西亞</td><td>550 萬美元（鮮果）</td><td>&lt;1%</td><td>2024年6月才開放</td></tr>
+    </tbody>
+  </table>
+  <h3>中國本土種植</h3>
+  <p>海南省種植面積超過 <strong>3 萬畝</strong>，2024 年產量僅 <strong>250 公噸</strong>，遠不足以替代進口。廣西、四川也在進行耐寒試驗，仍屬早期。</p>
+</section>
+
+<!-- 14. 未來 -->
+<section id="s14">
+  <h2 class="sec-title">14. 未來展望</h2>
+  <table>
+    <thead><tr><th>機構</th><th>2030 預測市場規模</th><th>CAGR</th></tr></thead>
+    <tbody>
+      <tr><td>Grand View Research</td><td>24.4 億美元（僅新鮮榴槤）</td><td>4.9%</td></tr>
+      <tr><td>Research and Markets</td><td>118 億美元</td><td>6.12%</td></tr>
+      <tr><td>360iResearch</td><td>187.4 億美元（含加工品）</td><td>9.77%</td></tr>
+    </tbody>
+  </table>
+  <div class="card green">
+    <h4>🔬 低氣味品種育種</h4>
+    <p>貓山王基因組完整解碼（2025 年 Nature），科學家已鑑別出與氣味化合物合成相關的特定基因家族，為「輕味榴槤」提供路徑圖。若商業化成功，將大幅擴展全球受眾。</p>
+  </div>
+  <div class="card blue">
+    <h4>🌍 市場多元化</h4>
+    <p>越南 2025 年 1–2 月對美出口增長 <strong>66%</strong>，對日增長 <strong>23%</strong>，榴槤逐漸突破亞裔圈進入澳洲、歐洲、北美主流市場。</p>
+  </div>
+</section>
+
+<!-- 15. 深度分析 -->
+<section id="s15">
+  <h2 class="sec-title">15. 深度分析：交叉驗證與核心洞察</h2>
+
+  <div class="insight">
+    <div class="i-num">01</div>
+    <h4>中國市場是唯一超級引擎，也是最大單點風險</h4>
+    <p>中國進口約佔全球出口量的 <strong>95%</strong>（多方來源交叉確認）。越南 2025 年因中國一收緊檢驗，單月出口暴跌 <strong>56.7%</strong>。這種極度集中的依賴是整個產業的結構性脆弱點。</p>
+  </div>
+
+  <div class="insight">
+    <div class="i-num">02</div>
+    <h4>「貓山王」品牌溢價是真實且持續的</h4>
+    <p>馬來西亞本地批發 USD 3.27 → 中國零售 USD 15+（溢價超過 4 倍，多方數據交叉確認）。假冒問題嚴重（RM 260 萬詐騙案），說明品牌價值已引發仿冒誘因。</p>
+  </div>
+
+  <div class="insight">
+    <div class="i-num">03</div>
+    <h4>被忽略的洞察：榴槤是全球唯一同時吸引「頂奢消費者」與「Z 世代 TikTok 文化」的食材</h4>
+    <p>貓山王的「高端禮品」定位（直接與燕窩競爭）與「Douyin 12.4 億次播放」的病毒式傳播，在同一個食材身上同時成立。這種「奢侈品感知 + 話題性」的罕見組合，在全球農產品中幾乎找不到第二個案例。</p>
+  </div>
+
+  <h3>風險評估矩陣</h3>
+  <table>
+    <thead><tr><th>風險</th><th>等級</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td>中國政策依賴</td><td><span class="risk-high">🔴 極高</span></td><td>90%+ 出口集中單一市場</td></tr>
+      <tr><td>越南農藥/重金屬</td><td><span class="risk-high">🔴 高</span></td><td>2024–2025 年多次超標事件</td></tr>
+      <tr><td>假冒貓山王</td><td><span class="risk-high">🔴 高</span></td><td>RM 260 萬詐騙案，中國市場氾濫</td></tr>
+      <tr><td>氣候變遷衝擊</td><td><span class="risk-mid">🟠 中高</span></td><td>2024 年泰國產量 -18%，趨勢持續</td></tr>
+      <tr><td>雨林砍伐爭議</td><td><span class="risk-mid">🟠 中高</span></td><td>馬來西亞大規模開墾，威脅授粉生態</td></tr>
+      <tr><td>農場投資風險</td><td><span class="risk-mid">🟠 中</span></td><td>2025 年價格暴跌 60%，高報酬宣傳需核實</td></tr>
+      <tr><td>榴槤+酒精</td><td><span class="risk-low">🟡 低至中</span></td><td>不致命但有不適風險，心臟病患需注意</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 驗證摘要 -->
+  <h3>資料驗證摘要</h3>
+  <div class="verify-grid">
+    <div class="verify-card high">
+      <div class="v-count">65+</div>
+      <div class="v-label">🟢 高信度<br>多來源交叉驗證通過</div>
+    </div>
+    <div class="verify-card mid">
+      <div class="v-count">30</div>
+      <div class="v-label">🟡 中信度<br>單一可靠來源</div>
+    </div>
+    <div class="verify-card low">
+      <div class="v-count">8</div>
+      <div class="v-label">🔴 待驗證<br>農場報酬率等行銷資料</div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<footer>
+  本報告由 8 個 subagent 並行調研，涵蓋 100+ 個獨立來源<br>
+  研究模式：深度（--deep）｜ 生成日期：2026-06-03<br>
+  /Users/igf/AI_Research ｜ inari-kira-isla.github.io
+</footer>
+
+</body>
+</html>

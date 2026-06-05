@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>MACAO Tourism Brand — HyperFrames Outro</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #000; width: 1280px; height: 720px; overflow: hidden; }
+
+.stage {
+  position: relative; width: 1280px; height: 720px; overflow: hidden;
+  background: #030812; cursor: pointer;
+  opacity: 0;
+}
+.bg-glow {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 1100px 650px at 50% 46%, rgba(10,18,60,0.9) 0%, transparent 65%),
+    radial-gradient(ellipse 600px 400px at 78% 75%, rgba(25,8,60,0.4) 0%, transparent 55%);
+}
+/* Top & bottom gold rule lines */
+.rule-top, .rule-bottom {
+  position: absolute; left: 10%; right: 10%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,160,55,0.55), rgba(245,200,66,0.85), rgba(200,160,55,0.55), transparent);
+  opacity: 0;
+}
+.rule-top    { top: 88px; }
+.rule-bottom { bottom: 88px; }
+
+/* Mini logo at top center */
+.mini-logo {
+  position: absolute; top: 116px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 16px;
+  opacity: 0;
+}
+.mini-lotus-svg { width: 48px; height: 48px; overflow: visible; }
+.mini-macao {
+  font-family: 'Didot', 'Bodoni 72', Georgia, serif;
+  font-size: 28px; font-weight: 900; letter-spacing: 8px; color: rgba(245,200,66,0.9);
+  text-shadow: 0 0 30px rgba(245,200,66,0.5);
+}
+
+/* Main CTA block */
+.cta-block {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%) translateY(20px);
+  text-align: center; opacity: 0;
+}
+.cta-main {
+  font-family: 'Hiragino Mincho Pro', 'Noto Serif SC', 'PingFang TC', serif;
+  font-size: 50px; font-weight: 700; letter-spacing: 5px;
+  color: #fff;
+  text-shadow: 0 0 60px rgba(180,160,255,0.25), 0 2px 0 rgba(0,0,0,0.5);
+  display: block; margin-bottom: 10px;
+}
+.cta-sub {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px; font-weight: 200; letter-spacing: 7px;
+  color: rgba(190,175,255,0.55);
+  text-transform: uppercase; display: block;
+}
+
+/* URL pill */
+.url-pill {
+  position: absolute; left: 50%; bottom: 152px;
+  transform: translateX(-50%);
+  display: flex; align-items: center; gap: 14px;
+  border: 1px solid rgba(245,200,66,0.38);
+  border-radius: 50px; padding: 10px 30px;
+  background: rgba(245,200,66,0.06);
+  opacity: 0; white-space: nowrap;
+}
+.url-icon {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(245,200,66,0.9); flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(245,200,66,0.7);
+}
+.url-text {
+  font-family: 'SF Mono', 'Menlo', 'Courier New', monospace;
+  font-size: 19px; letter-spacing: 1px;
+  color: rgba(245,220,140,0.92);
+  text-shadow: 0 0 18px rgba(245,200,66,0.3);
+  clip-path: inset(0 100% 0 0); /* typewriter reveal */
+}
+/* Brand badge bottom right */
+.brand-badge {
+  position: absolute; bottom: 26px; right: 36px;
+  display: flex; align-items: center; gap: 8px; opacity: 0;
+}
+.badge-line {
+  width: 22px; height: 1px; background: rgba(200,160,55,0.4);
+}
+.badge-text {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10px; letter-spacing: 3px; color: rgba(160,145,210,0.35);
+  text-transform: uppercase;
+}
+
+.vignette {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.75) 100%);
+}
+.grain {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  opacity: 0.032; mix-blend-mode: screen; pointer-events: none;
+}
+.stage::after {
+  content: '▶ 點擊重播';
+  position: absolute; bottom: 10px; left: 16px;
+  font-size: 10px; color: rgba(245,200,66,0.15);
+  font-family: monospace; letter-spacing: 1px; pointer-events: none;
+}
+</style>
+</head>
+<body>
+
+<div class="stage" data-composition-id="main" data-start="0" data-duration="4" data-fps="30">
+  <div class="bg-glow"></div>
+  <div class="rule-top"></div>
+  <div class="rule-bottom"></div>
+
+  <!-- Mini logo (top) -->
+  <div class="mini-logo">
+    <svg class="mini-lotus-svg" viewBox="-24 -24 48 48">
+      <defs>
+        <radialGradient id="mpgr" cx="0" cy="0" r="20" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#fffce0"/>
+          <stop offset="40%"  stop-color="#f5c842"/>
+          <stop offset="100%" stop-color="#8b4800"/>
+        </radialGradient>
+      </defs>
+      <!-- 6 mini outer petals (rotation set by GSAP) -->
+      <path class="mini-petal mo" d="M0,0 C3,-4 3.5,-12 0,-15 C-3.5,-12 -3,-4 0,0Z" fill="url(#mpgr)"/>
+      <path class="mini-petal mo" d="M0,0 C3,-4 3.5,-12 0,-15 C-3.5,-12 -3,-4 0,0Z" fill="url(#mpgr)"/>
+      <path class="mini-petal mo" d="M0,0 C3,-4 3.5,-12 0,-15 C-3.5,-12 -3,-4 0,0Z" fill="url(#mpgr)"/>
+      <path class="mini-petal mo" d="M0,0 C3,-4 3.5,-12 0,-15 C-3.5,-12 -3,-4 0,0Z" fill="url(#mpgr)"/>
+      <path class="mini-petal mo" d="M0,0 C3,-4 3.5,-12 0,-15 C-3.5,-12 -3,-4 0,0Z" fill="url(#mpgr)"/>
+      <path class="mini-petal mo" d="M0,0 C3,-4 3.5,-12 0,-15 C-3.5,-12 -3,-4 0,0Z" fill="url(#mpgr)"/>
+      <!-- Center -->
+      <circle cx="0" cy="0" r="2.5" fill="#fffce0"/>
+    </svg>
+    <div class="mini-macao">MACAO</div>
+  </div>
+
+  <!-- CTA block -->
+  <div class="cta-block">
+    <span class="cta-main">更多澳門旅遊資訊</span>
+    <span class="cta-sub">Discover More of Macao</span>
+  </div>
+
+  <!-- URL pill -->
+  <div class="url-pill">
+    <div class="url-icon"></div>
+    <div class="url-text">cloudpipe-macao-app.vercel.app</div>
+    <div class="url-icon"></div>
+  </div>
+
+  <!-- Brand badge -->
+  <div class="brand-badge">
+    <div class="badge-line"></div>
+    <div class="badge-text">Powered by CloudPipe AEO</div>
+    <div class="badge-line"></div>
+  </div>
+
+  <div class="vignette"></div>
+  <svg class="grain" xmlns="http://www.w3.org/2000/svg">
+    <filter id="gf">
+      <feTurbulence type="fractalNoise" baseFrequency="0.66" numOctaves="4" seed="8" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#gf)"/>
+  </svg>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+
+// ── Phase 1: Stage reveal (0–0.4s) ───────────────────────
+tl.to('.stage', { opacity: 1, duration: 0.45, ease: 'power2.out' }, 0);
+
+// Rule lines expand from center
+tl.fromTo('.rule-top',
+  { scaleX: 0, opacity: 0 },
+  { scaleX: 1, opacity: 1, duration: 0.55, ease: 'power3.out', transformOrigin: '50% 50%' },
+  0.25
+);
+tl.fromTo('.rule-bottom',
+  { scaleX: 0, opacity: 0 },
+  { scaleX: 1, opacity: 1, duration: 0.55, ease: 'power3.out', transformOrigin: '50% 50%' },
+  0.35
+);
+
+// ── Phase 2: Mini logo bloom (0.3–0.85s) ─────────────────
+document.querySelectorAll('.mini-petal.mo').forEach((el, i) => {
+  gsap.set(el, { svgOrigin: '0 0', rotation: i * 60, scale: 0 });
+});
+tl.to('.mini-petal.mo', {
+  scale: 1, duration: 0.4, stagger: 0.055, ease: 'back.out(1.8)',
+}, 0.3);
+tl.to('.mini-logo', { opacity: 1, duration: 0.35, ease: 'power2.out' }, 0.28);
+
+// ── Phase 3: CTA slides up (0.7–1.25s) ───────────────────
+tl.to('.cta-block',
+  { opacity: 1, y: 0, duration: 0.6, ease: 'back.out(1.2)',
+    transform: 'translate(-50%, -50%) translateY(0px)' },
+  0.7
+);
+// Use separate translateY trick via direct prop
+tl.fromTo('.cta-block',
+  { opacity: 0, y: 35 },
+  { opacity: 1, y: 0, duration: 0.58, ease: 'back.out(1.2)' },
+  0.7
+);
+
+// ── Phase 4: URL pill reveal (1.3–2.0s) ──────────────────
+tl.to('.url-pill', { opacity: 1, duration: 0.35, ease: 'power2.out' }, 1.3);
+// URL typewriter: clip-path left-to-right reveal
+tl.to('.url-text',
+  { clipPath: 'inset(0 0% 0 0)', duration: 0.85, ease: 'power2.inOut' },
+  1.5
+);
+
+// ── Phase 5: Brand badge (2.1s) ──────────────────────────
+tl.to('.brand-badge', { opacity: 1, duration: 0.5, ease: 'power2.out' }, 2.1);
+
+// ── Phase 6: Hold with subtle pulse (2.5–4.0s) ───────────
+tl.to('.cta-main', {
+  textShadow: '0 0 80px rgba(200,180,255,0.35), 0 2px 0 rgba(0,0,0,0.5)',
+  duration: 0.5, ease: 'power2.out',
+}, 2.5);
+tl.to('.cta-main', {
+  textShadow: '0 0 60px rgba(180,160,255,0.2), 0 2px 0 rgba(0,0,0,0.5)',
+  duration: 0.6, ease: 'power2.in',
+}, 3.0);
+// URL pill subtle glow pulse
+tl.to('.url-pill', {
+  boxShadow: '0 0 25px rgba(245,200,66,0.15), inset 0 0 15px rgba(245,200,66,0.05)',
+  duration: 0.5, ease: 'power2.out',
+}, 2.7);
+tl.to('.url-pill', {
+  boxShadow: 'none',
+  duration: 0.6, ease: 'power2.in',
+}, 3.2);
+
+// ── Preview helpers ───────────────────────────────────────
+window.__timelines["main"] = tl;
+tl.play();
+document.querySelector('.stage').addEventListener('click', () => tl.restart());
+tl.eventCallback('onComplete', () => setTimeout(() => tl.restart(), 700));
+</script>
+</body>
+</html>

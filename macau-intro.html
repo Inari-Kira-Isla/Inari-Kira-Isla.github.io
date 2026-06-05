@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>MACAO Tourism Brand — HyperFrames Intro</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #000; width: 1280px; height: 720px; overflow: hidden; }
+
+.stage {
+  position: relative; width: 1280px; height: 720px; overflow: hidden;
+  background: #020510; cursor: pointer;
+}
+.bg-nebula {
+  position: absolute; inset: 0; opacity: 0;
+  background:
+    radial-gradient(ellipse 900px 700px at 50% 38%, rgba(35,10,90,0.75) 0%, transparent 65%),
+    radial-gradient(ellipse 600px 400px at 20% 75%, rgba(0,25,70,0.4) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 300px at 82% 68%, rgba(10,0,55,0.3) 0%, transparent 60%);
+}
+.star {
+  position: absolute; border-radius: 50%; background: #fff;
+  opacity: 0; will-change: opacity;
+}
+/* Logo group absolutely centered (y offset -24px for visual balance) */
+.logo-group {
+  position: absolute; left: 50%; top: calc(50% - 24px);
+  transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0;
+  will-change: transform;
+}
+/* SVG: overflow:visible so rays extend past bounds */
+.logo-svg {
+  width: 220px; height: 220px;
+  overflow: visible;
+  margin-bottom: 22px;
+  display: block;
+}
+/* MACAO letters */
+.macao-row {
+  display: flex; align-items: baseline;
+  letter-spacing: 10px;
+  margin-bottom: 12px;
+}
+.letter {
+  font-family: 'Didot', 'Bodoni 72', 'Playfair Display', Georgia, serif;
+  font-size: 86px; font-weight: 900; color: #fff;
+  text-shadow:
+    0 0 50px rgba(245,200,66,0.9),
+    0 0 100px rgba(245,200,66,0.4),
+    0 3px 0 rgba(0,0,0,0.6);
+  opacity: 0; display: inline-block; will-change: transform;
+}
+.brand-zh {
+  font-family: 'Hiragino Mincho Pro', 'PingFang TC', 'STSong', serif;
+  font-size: 17px; font-weight: 400; letter-spacing: 10px;
+  color: rgba(245,210,120,0.88);
+  opacity: 0; margin-bottom: 9px;
+}
+.tagline {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px; font-weight: 200; letter-spacing: 6px;
+  color: rgba(190,170,255,0.45);
+  text-transform: uppercase; opacity: 0;
+}
+/* Horizontal lens flare sweep */
+.flare {
+  position: absolute; top: 0; bottom: 0; left: -420px; width: 420px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,248,200,0.04) 20%,
+    rgba(255,248,200,0.55) 50%,
+    rgba(255,248,200,0.04) 80%,
+    transparent 100%);
+  filter: blur(10px); opacity: 0; pointer-events: none; z-index: 12;
+}
+/* Secondary small flare dot */
+.flare-dot {
+  position: absolute; top: 50%; left: -40px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,220,0.95);
+  transform: translateY(-50%);
+  filter: blur(3px); opacity: 0; pointer-events: none; z-index: 13;
+}
+.vignette {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 42%, rgba(0,0,0,0.82) 100%);
+}
+.grain {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  opacity: 0.038; mix-blend-mode: screen; pointer-events: none;
+}
+.stage::after {
+  content: '▶ 點擊重播';
+  position: absolute; bottom: 10px; right: 16px;
+  font-size: 10px; color: rgba(245,200,66,0.18);
+  font-family: monospace; letter-spacing: 1px; pointer-events: none;
+}
+</style>
+</head>
+<body>
+
+<div class="stage" data-composition-id="main" data-start="0" data-duration="4" data-fps="30">
+  <div class="bg-nebula"></div>
+
+  <!-- 26 stars (deterministic positions + sizes) -->
+  <div class="star" style="left:4%;top:7%;width:2px;height:2px;"></div>
+  <div class="star" style="left:11%;top:21%;width:1px;height:1px;"></div>
+  <div class="star" style="left:19%;top:5%;width:2px;height:2px;"></div>
+  <div class="star" style="left:31%;top:13%;width:1px;height:1px;"></div>
+  <div class="star" style="left:42%;top:4%;width:2px;height:2px;"></div>
+  <div class="star" style="left:54%;top:9%;width:1px;height:1px;"></div>
+  <div class="star" style="left:65%;top:4%;width:2px;height:2px;"></div>
+  <div class="star" style="left:75%;top:17%;width:1px;height:1px;"></div>
+  <div class="star" style="left:84%;top:6%;width:2px;height:2px;"></div>
+  <div class="star" style="left:92%;top:22%;width:1px;height:1px;"></div>
+  <div class="star" style="left:96%;top:52%;width:2px;height:2px;"></div>
+  <div class="star" style="left:91%;top:70%;width:1px;height:1px;"></div>
+  <div class="star" style="left:83%;top:84%;width:2px;height:2px;"></div>
+  <div class="star" style="left:71%;top:91%;width:1px;height:1px;"></div>
+  <div class="star" style="left:58%;top:87%;width:2px;height:2px;"></div>
+  <div class="star" style="left:44%;top:94%;width:1px;height:1px;"></div>
+  <div class="star" style="left:29%;top:89%;width:2px;height:2px;"></div>
+  <div class="star" style="left:17%;top:81%;width:1px;height:1px;"></div>
+  <div class="star" style="left:6%;top:68%;width:2px;height:2px;"></div>
+  <div class="star" style="left:2%;top:40%;width:1px;height:1px;"></div>
+  <div class="star" style="left:9%;top:54%;width:2px;height:2px;"></div>
+  <div class="star" style="left:73%;top:40%;width:1px;height:1px;"></div>
+  <div class="star" style="left:62%;top:73%;width:2px;height:2px;"></div>
+  <div class="star" style="left:37%;top:71%;width:1px;height:1px;"></div>
+  <div class="star" style="left:22%;top:43%;width:2px;height:2px;"></div>
+  <div class="star" style="left:50%;top:78%;width:1px;height:1px;"></div>
+
+  <!-- Logo group (lotus SVG + text) -->
+  <div class="logo-group">
+    <svg class="logo-svg" viewBox="-110 -110 220 220">
+      <defs>
+        <!-- Gold radial gradient for petals (inner bright, outer deep amber) -->
+        <radialGradient id="pgr" cx="0" cy="0" r="72" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#fffce0"/>
+          <stop offset="28%"  stop-color="#f5c842"/>
+          <stop offset="75%"  stop-color="#c8821a"/>
+          <stop offset="100%" stop-color="#7a3a00"/>
+        </radialGradient>
+        <!-- Center glowing white-gold -->
+        <radialGradient id="cgr" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="#ffffff"/>
+          <stop offset="40%"  stop-color="#fffce0"/>
+          <stop offset="100%" stop-color="#f5c842"/>
+        </radialGradient>
+        <!-- Soft glow filter for center -->
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- ── 12 light rays (behind petals) ────────────── -->
+      <!-- Each ray: x2=sin(θ)*300, y2=-cos(θ)*300, length=300 -->
+      <line class="ray" x1="0" y1="0" x2="0"    y2="-300" stroke="rgba(245,200,66,0.5)" stroke-width="1.2"  stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="150"  y2="-260" stroke="rgba(245,200,66,0.38)" stroke-width="0.9" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="260"  y2="-150" stroke="rgba(245,200,66,0.32)" stroke-width="0.8" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="300"  y2="0"    stroke="rgba(245,200,66,0.38)" stroke-width="0.9" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="260"  y2="150"  stroke="rgba(245,200,66,0.28)" stroke-width="0.7" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="150"  y2="260"  stroke="rgba(245,200,66,0.3)"  stroke-width="0.8" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="0"    y2="300"  stroke="rgba(245,200,66,0.22)" stroke-width="0.7" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="-150" y2="260"  stroke="rgba(245,200,66,0.28)" stroke-width="0.8" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="-260" y2="150"  stroke="rgba(245,200,66,0.32)" stroke-width="0.7" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="-300" y2="0"    stroke="rgba(245,200,66,0.38)" stroke-width="0.9" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="-260" y2="-150" stroke="rgba(245,200,66,0.3)"  stroke-width="0.8" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="-150" y2="-260" stroke="rgba(245,200,66,0.38)" stroke-width="0.9" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+
+      <!-- ── 6 outer lotus petals (teardrop from origin) ── -->
+      <!-- rotation set by GSAP to avoid SVG/CSS transform conflict -->
+      <path class="petal petal-outer" d="M0,0 C14,-20 17,-54 0,-68 C-17,-54 -14,-20 0,0Z" fill="url(#pgr)"/>
+      <path class="petal petal-outer" d="M0,0 C14,-20 17,-54 0,-68 C-17,-54 -14,-20 0,0Z" fill="url(#pgr)"/>
+      <path class="petal petal-outer" d="M0,0 C14,-20 17,-54 0,-68 C-17,-54 -14,-20 0,0Z" fill="url(#pgr)"/>
+      <path class="petal petal-outer" d="M0,0 C14,-20 17,-54 0,-68 C-17,-54 -14,-20 0,0Z" fill="url(#pgr)"/>
+      <path class="petal petal-outer" d="M0,0 C14,-20 17,-54 0,-68 C-17,-54 -14,-20 0,0Z" fill="url(#pgr)"/>
+      <path class="petal petal-outer" d="M0,0 C14,-20 17,-54 0,-68 C-17,-54 -14,-20 0,0Z" fill="url(#pgr)"/>
+
+      <!-- ── 6 inner lotus petals (smaller, 30° offset) ─── -->
+      <path class="petal petal-inner" d="M0,0 C9,-13 11,-38 0,-49 C-11,-38 -9,-13 0,0Z" fill="url(#pgr)" opacity="0.85"/>
+      <path class="petal petal-inner" d="M0,0 C9,-13 11,-38 0,-49 C-11,-38 -9,-13 0,0Z" fill="url(#pgr)" opacity="0.85"/>
+      <path class="petal petal-inner" d="M0,0 C9,-13 11,-38 0,-49 C-11,-38 -9,-13 0,0Z" fill="url(#pgr)" opacity="0.85"/>
+      <path class="petal petal-inner" d="M0,0 C9,-13 11,-38 0,-49 C-11,-38 -9,-13 0,0Z" fill="url(#pgr)" opacity="0.85"/>
+      <path class="petal petal-inner" d="M0,0 C9,-13 11,-38 0,-49 C-11,-38 -9,-13 0,0Z" fill="url(#pgr)" opacity="0.85"/>
+      <path class="petal petal-inner" d="M0,0 C9,-13 11,-38 0,-49 C-11,-38 -9,-13 0,0Z" fill="url(#pgr)" opacity="0.85"/>
+
+      <!-- ── Center ── -->
+      <circle class="center-halo" cx="0" cy="0" r="20" fill="rgba(255,248,200,0.22)" opacity="0"/>
+      <circle class="center-dot"  cx="0" cy="0" r="11"  fill="url(#cgr)" filter="url(#glow)" opacity="0"/>
+    </svg>
+
+    <div class="macao-row">
+      <span class="letter">M</span>
+      <span class="letter">A</span>
+      <span class="letter">C</span>
+      <span class="letter">A</span>
+      <span class="letter">O</span>
+    </div>
+    <div class="brand-zh">澳門旅遊局</div>
+    <div class="tagline">夢想之城 &nbsp;·&nbsp; City of Dreams</div>
+  </div>
+
+  <!-- Lens flare elements -->
+  <div class="flare"></div>
+  <div class="flare-dot"></div>
+
+  <div class="vignette"></div>
+  <svg class="grain" xmlns="http://www.w3.org/2000/svg">
+    <filter id="grn">
+      <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="4" seed="5" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#grn)"/>
+  </svg>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+
+// ── Phase 1: Environment (0–0.5s) ─────────────────────────
+tl.to('.bg-nebula', { opacity: 1, duration: 0.6, ease: 'power2.out' }, 0);
+// Stars fade in
+tl.fromTo('.star',
+  { opacity: 0, scale: 0.2 },
+  { opacity: 0.65, scale: 1, duration: 0.4, stagger: { each: 0.025, from: 'start' }, ease: 'power2.out' },
+  0.08
+);
+// Alternate star opacities for variety
+document.querySelectorAll('.star').forEach((el, i) => {
+  const ops = [0.7,0.4,0.85,0.35,0.6,0.45,0.75,0.3,0.65,0.5,0.8,0.38,0.55,0.7,0.42,0.68,0.35,0.6,0.75,0.4,0.55,0.48,0.7,0.35,0.6,0.45];
+  gsap.set(el, { opacity: 0, '--final-op': ops[i % ops.length] || 0.5 });
+});
+
+// ── Phase 2: Lotus petals bloom (0.28–1.35s) ──────────────
+// Set all petals: rotation (GSAP owns the transform), scale from 0 at SVG origin
+const outerAngles = [0, 60, 120, 180, 240, 300];
+const innerAngles = [30, 90, 150, 210, 270, 330];
+
+document.querySelectorAll('.petal-outer').forEach((el, i) => {
+  gsap.set(el, { svgOrigin: '0 0', rotation: outerAngles[i], scale: 0 });
+});
+document.querySelectorAll('.petal-inner').forEach((el, i) => {
+  gsap.set(el, { svgOrigin: '0 0', rotation: innerAngles[i], scale: 0 });
+});
+gsap.set('.center-dot',  { svgOrigin: '0 0', scale: 0, opacity: 0 });
+gsap.set('.center-halo', { svgOrigin: '0 0', scale: 0, opacity: 0 });
+
+// Outer petals bloom outward
+tl.to('.petal-outer', {
+  scale: 1, duration: 0.55, stagger: 0.065, ease: 'back.out(1.7)',
+}, 0.28);
+
+// Inner petals (offset timing)
+tl.to('.petal-inner', {
+  scale: 1, duration: 0.45, stagger: 0.055, ease: 'back.out(1.5)',
+}, 0.5);
+
+// Center emerges with flare
+tl.to('.center-halo', { scale: 1, opacity: 1, duration: 0.4, ease: 'power3.out' }, 0.82);
+tl.to('.center-dot',  { scale: 1, opacity: 1, duration: 0.35, ease: 'back.out(2.5)' }, 0.88);
+
+// ── Phase 3: Light rays draw out (0.85–1.45s) ─────────────
+tl.to('.ray', {
+  attr: { 'stroke-dashoffset': 0 }, opacity: 1,
+  duration: 0.5, stagger: 0.04, ease: 'power3.out',
+}, 0.85);
+
+// ── Phase 4: MACAO letters slam in (1.05–1.6s) ─────────────
+tl.fromTo('.letter',
+  { y: 75, opacity: 0, scale: 0.55 },
+  { y: 0, opacity: 1, scale: 1, duration: 0.52, stagger: 0.075, ease: 'back.out(1.6)' },
+  1.05
+);
+
+// ── Phase 5: Subtitles appear (1.5–1.9s) ─────────────────
+tl.to('.brand-zh', { opacity: 1, duration: 0.45, ease: 'power2.out' }, 1.52);
+tl.to('.tagline',  { opacity: 1, duration: 0.4,  ease: 'power2.out' }, 1.72);
+
+// ── Phase 6: Lens flare sweep (1.58–2.02s) ───────────────
+tl.fromTo('.flare',
+  { left: '-420px', opacity: 0 },
+  { left: '700px',  opacity: 1, duration: 0.23, ease: 'power2.in' },
+  1.58
+);
+tl.to('.flare', { left: '1700px', opacity: 0, duration: 0.23, ease: 'power2.out' }, 1.81);
+
+// Flare hot-spot dot
+tl.fromTo('.flare-dot',
+  { left: '-40px', opacity: 0 },
+  { left: '700px', opacity: 1, duration: 0.2, ease: 'power2.in' },
+  1.6
+);
+tl.to('.flare-dot', { left: '1700px', opacity: 0, duration: 0.18, ease: 'power2.out' }, 1.8);
+
+// ── Phase 7: Rays fade + logo breathes (2.0–3.95s) ────────
+tl.to('.ray', { opacity: 0.22, duration: 1.2, ease: 'power1.in' }, 2.05);
+
+// Logo breathing: 2 gentle pulses
+tl.to('.logo-group', { scale: 1.020, duration: 0.65, ease: 'sine.inOut' }, 2.2);
+tl.to('.logo-group', { scale: 1.000, duration: 0.65, ease: 'sine.inOut' }, 2.85);
+tl.to('.logo-group', { scale: 1.012, duration: 0.5,  ease: 'sine.inOut' }, 3.5);
+tl.to('.logo-group', { scale: 1.000, duration: 0.45, ease: 'sine.inOut' }, 4.0);
+
+// Star subtle twinkle (2 stars pulse, finite)
+tl.to('.star:nth-child(3)', { opacity: 0.15, duration: 0.3, yoyo: true, repeat: 3, ease: 'sine.inOut' }, 2.1);
+tl.to('.star:nth-child(9)', { opacity: 0.15, duration: 0.4, yoyo: true, repeat: 2, ease: 'sine.inOut' }, 2.5);
+
+// ── Preview helpers ──────────────────────────────────────
+window.__timelines["main"] = tl;
+tl.play();
+document.querySelector('.stage').addEventListener('click', () => tl.restart());
+tl.eventCallback('onComplete', () => setTimeout(() => tl.restart(), 700));
+</script>
+</body>
+</html>

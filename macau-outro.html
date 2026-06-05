@@ -5,23 +5,23 @@
 <title>MACAO Tourism Brand — HyperFrames Outro</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #000; width: 1280px; height: 720px; overflow: hidden; }
+body { background: #fff; width: 1280px; height: 720px; overflow: hidden; }
 
 .stage {
   position: relative; width: 1280px; height: 720px; overflow: hidden;
-  background: #030812; cursor: pointer;
+  background: #ffffff; cursor: pointer;
   opacity: 0;
 }
 .bg-glow {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 1100px 650px at 50% 46%, rgba(10,18,60,0.9) 0%, transparent 65%),
-    radial-gradient(ellipse 600px 400px at 78% 75%, rgba(25,8,60,0.4) 0%, transparent 55%);
+    radial-gradient(ellipse 1000px 600px at 50% 46%, rgba(255,238,180,0.35) 0%, transparent 65%),
+    radial-gradient(ellipse 500px 350px at 78% 75%, rgba(255,220,150,0.15) 0%, transparent 55%);
 }
 /* Top & bottom gold rule lines */
 .rule-top, .rule-bottom {
   position: absolute; left: 10%; right: 10%; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200,160,55,0.55), rgba(245,200,66,0.85), rgba(200,160,55,0.55), transparent);
+  background: linear-gradient(90deg, transparent, rgba(160,110,10,0.35), rgba(180,130,15,0.65), rgba(160,110,10,0.35), transparent);
   opacity: 0;
 }
 .rule-top    { top: 88px; }
@@ -36,8 +36,7 @@ body { background: #000; width: 1280px; height: 720px; overflow: hidden; }
 .mini-lotus-svg { width: 48px; height: 48px; overflow: visible; }
 .mini-macao {
   font-family: 'Didot', 'Bodoni 72', Georgia, serif;
-  font-size: 28px; font-weight: 900; letter-spacing: 8px; color: rgba(245,200,66,0.9);
-  text-shadow: 0 0 30px rgba(245,200,66,0.5);
+  font-size: 28px; font-weight: 900; letter-spacing: 8px; color: #0d1f3c;
 }
 
 /* Main CTA block */
@@ -49,14 +48,13 @@ body { background: #000; width: 1280px; height: 720px; overflow: hidden; }
 .cta-main {
   font-family: 'Hiragino Mincho Pro', 'Noto Serif SC', 'PingFang TC', serif;
   font-size: 50px; font-weight: 700; letter-spacing: 5px;
-  color: #fff;
-  text-shadow: 0 0 60px rgba(180,160,255,0.25), 0 2px 0 rgba(0,0,0,0.5);
+  color: #0d1f3c;
   display: block; margin-bottom: 10px;
 }
 .cta-sub {
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 14px; font-weight: 200; letter-spacing: 7px;
-  color: rgba(190,175,255,0.55);
+  font-size: 14px; font-weight: 300; letter-spacing: 7px;
+  color: #9a8060;
   text-transform: uppercase; display: block;
 }
 
@@ -65,22 +63,20 @@ body { background: #000; width: 1280px; height: 720px; overflow: hidden; }
   position: absolute; left: 50%; bottom: 152px;
   transform: translateX(-50%);
   display: flex; align-items: center; gap: 14px;
-  border: 1px solid rgba(245,200,66,0.38);
+  border: 1px solid rgba(160,110,10,0.4);
   border-radius: 50px; padding: 10px 30px;
-  background: rgba(245,200,66,0.06);
+  background: rgba(200,150,10,0.06);
   opacity: 0; white-space: nowrap;
 }
 .url-icon {
   width: 7px; height: 7px; border-radius: 50%;
-  background: rgba(245,200,66,0.9); flex-shrink: 0;
-  box-shadow: 0 0 8px rgba(245,200,66,0.7);
+  background: #b8860b; flex-shrink: 0;
 }
 .url-text {
   font-family: 'SF Mono', 'Menlo', 'Courier New', monospace;
   font-size: 19px; letter-spacing: 1px;
-  color: rgba(245,220,140,0.92);
-  text-shadow: 0 0 18px rgba(245,200,66,0.3);
-  clip-path: inset(0 100% 0 0); /* typewriter reveal */
+  color: #7a4f00;
+  clip-path: inset(0 100% 0 0);
 }
 /* Brand badge bottom right */
 .brand-badge {
@@ -88,11 +84,11 @@ body { background: #000; width: 1280px; height: 720px; overflow: hidden; }
   display: flex; align-items: center; gap: 8px; opacity: 0;
 }
 .badge-line {
-  width: 22px; height: 1px; background: rgba(200,160,55,0.4);
+  width: 22px; height: 1px; background: rgba(160,120,20,0.35);
 }
 .badge-text {
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 10px; letter-spacing: 3px; color: rgba(160,145,210,0.35);
+  font-size: 10px; letter-spacing: 3px; color: rgba(120,100,60,0.5);
   text-transform: uppercase;
 }
 
@@ -102,12 +98,16 @@ body { background: #000; width: 1280px; height: 720px; overflow: hidden; }
 }
 .grain {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  opacity: 0.032; mix-blend-mode: screen; pointer-events: none;
+  opacity: 0.022; mix-blend-mode: multiply; pointer-events: none;
+}
+.vignette {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 48%, rgba(200,180,140,0.15) 100%);
 }
 .stage::after {
   content: '▶ 點擊重播';
   position: absolute; bottom: 10px; left: 16px;
-  font-size: 10px; color: rgba(245,200,66,0.15);
+  font-size: 10px; color: rgba(140,100,20,0.2);
   font-family: monospace; letter-spacing: 1px; pointer-events: none;
 }
 </style>
@@ -227,11 +227,11 @@ tl.to('.brand-badge', { opacity: 1, duration: 0.5, ease: 'power2.out' }, 2.1);
 
 // ── Phase 6: Hold with subtle pulse (2.5–4.0s) ───────────
 tl.to('.cta-main', {
-  textShadow: '0 0 80px rgba(200,180,255,0.35), 0 2px 0 rgba(0,0,0,0.5)',
+  color: '#1a3a6e',
   duration: 0.5, ease: 'power2.out',
 }, 2.5);
 tl.to('.cta-main', {
-  textShadow: '0 0 60px rgba(180,160,255,0.2), 0 2px 0 rgba(0,0,0,0.5)',
+  color: '#0d1f3c',
   duration: 0.6, ease: 'power2.in',
 }, 3.0);
 // URL pill subtle glow pulse

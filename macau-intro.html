@@ -5,21 +5,21 @@
 <title>MACAO Tourism Brand — HyperFrames Intro</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #000; width: 1280px; height: 720px; overflow: hidden; }
+body { background: #fff; width: 1280px; height: 720px; overflow: hidden; }
 
 .stage {
   position: relative; width: 1280px; height: 720px; overflow: hidden;
-  background: #020510; cursor: pointer;
+  background: #ffffff; cursor: pointer;
 }
 .bg-nebula {
   position: absolute; inset: 0; opacity: 0;
   background:
-    radial-gradient(ellipse 900px 700px at 50% 38%, rgba(35,10,90,0.75) 0%, transparent 65%),
-    radial-gradient(ellipse 600px 400px at 20% 75%, rgba(0,25,70,0.4) 0%, transparent 60%),
-    radial-gradient(ellipse 500px 300px at 82% 68%, rgba(10,0,55,0.3) 0%, transparent 60%);
+    radial-gradient(ellipse 850px 650px at 50% 38%, rgba(255,235,150,0.38) 0%, transparent 65%),
+    radial-gradient(ellipse 500px 350px at 18% 72%, rgba(255,220,120,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 450px 280px at 84% 65%, rgba(255,215,130,0.12) 0%, transparent 60%);
 }
 .star {
-  position: absolute; border-radius: 50%; background: #fff;
+  position: absolute; border-radius: 50%; background: rgba(180,130,20,0.35);
   opacity: 0; will-change: opacity;
 }
 /* Logo group absolutely centered (y offset -24px for visual balance) */
@@ -44,56 +44,54 @@ body { background: #000; width: 1280px; height: 720px; overflow: hidden; }
 }
 .letter {
   font-family: 'Didot', 'Bodoni 72', 'Playfair Display', Georgia, serif;
-  font-size: 86px; font-weight: 900; color: #fff;
+  font-size: 86px; font-weight: 900; color: #0d1f3c;
   text-shadow:
-    0 0 50px rgba(245,200,66,0.9),
-    0 0 100px rgba(245,200,66,0.4),
-    0 3px 0 rgba(0,0,0,0.6);
+    0 0 40px rgba(180,130,10,0.18),
+    0 2px 0 rgba(0,0,0,0.08);
   opacity: 0; display: inline-block; will-change: transform;
 }
 .brand-zh {
   font-family: 'Hiragino Mincho Pro', 'PingFang TC', 'STSong', serif;
   font-size: 17px; font-weight: 400; letter-spacing: 10px;
-  color: rgba(245,210,120,0.88);
+  color: #8b5a00;
   opacity: 0; margin-bottom: 9px;
 }
 .tagline {
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 11px; font-weight: 200; letter-spacing: 6px;
-  color: rgba(190,170,255,0.45);
+  font-size: 11px; font-weight: 300; letter-spacing: 6px;
+  color: #9a8060;
   text-transform: uppercase; opacity: 0;
 }
-/* Horizontal lens flare sweep */
+/* Horizontal shimmer sweep (gold on white) */
 .flare {
   position: absolute; top: 0; bottom: 0; left: -420px; width: 420px;
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(255,248,200,0.04) 20%,
-    rgba(255,248,200,0.55) 50%,
-    rgba(255,248,200,0.04) 80%,
+    rgba(200,150,20,0.06) 20%,
+    rgba(210,160,30,0.22) 50%,
+    rgba(200,150,20,0.06) 80%,
     transparent 100%);
   filter: blur(10px); opacity: 0; pointer-events: none; z-index: 12;
 }
-/* Secondary small flare dot */
 .flare-dot {
   position: absolute; top: 50%; left: -40px;
   width: 8px; height: 8px; border-radius: 50%;
-  background: rgba(255,255,220,0.95);
+  background: rgba(220,175,40,0.85);
   transform: translateY(-50%);
   filter: blur(3px); opacity: 0; pointer-events: none; z-index: 13;
 }
 .vignette {
   position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(ellipse at center, transparent 42%, rgba(0,0,0,0.82) 100%);
+  background: radial-gradient(ellipse at center, transparent 48%, rgba(200,180,140,0.18) 100%);
 }
 .grain {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  opacity: 0.038; mix-blend-mode: screen; pointer-events: none;
+  opacity: 0.025; mix-blend-mode: multiply; pointer-events: none;
 }
 .stage::after {
   content: '▶ 點擊重播';
   position: absolute; bottom: 10px; right: 16px;
-  font-size: 10px; color: rgba(245,200,66,0.18);
+  font-size: 10px; color: rgba(140,100,20,0.25);
   font-family: monospace; letter-spacing: 1px; pointer-events: none;
 }
 </style>
@@ -157,18 +155,18 @@ body { background: #000; width: 1280px; height: 720px; overflow: hidden; }
 
       <!-- ── 12 light rays (behind petals) ────────────── -->
       <!-- Each ray: x2=sin(θ)*300, y2=-cos(θ)*300, length=300 -->
-      <line class="ray" x1="0" y1="0" x2="0"    y2="-300" stroke="rgba(245,200,66,0.5)" stroke-width="1.2"  stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
-      <line class="ray" x1="0" y1="0" x2="150"  y2="-260" stroke="rgba(245,200,66,0.38)" stroke-width="0.9" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
-      <line class="ray" x1="0" y1="0" x2="260"  y2="-150" stroke="rgba(245,200,66,0.32)" stroke-width="0.8" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
-      <line class="ray" x1="0" y1="0" x2="300"  y2="0"    stroke="rgba(245,200,66,0.38)" stroke-width="0.9" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
-      <line class="ray" x1="0" y1="0" x2="260"  y2="150"  stroke="rgba(245,200,66,0.28)" stroke-width="0.7" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
-      <line class="ray" x1="0" y1="0" x2="150"  y2="260"  stroke="rgba(245,200,66,0.3)"  stroke-width="0.8" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
-      <line class="ray" x1="0" y1="0" x2="0"    y2="300"  stroke="rgba(245,200,66,0.22)" stroke-width="0.7" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
-      <line class="ray" x1="0" y1="0" x2="-150" y2="260"  stroke="rgba(245,200,66,0.28)" stroke-width="0.8" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
-      <line class="ray" x1="0" y1="0" x2="-260" y2="150"  stroke="rgba(245,200,66,0.32)" stroke-width="0.7" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
-      <line class="ray" x1="0" y1="0" x2="-300" y2="0"    stroke="rgba(245,200,66,0.38)" stroke-width="0.9" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
-      <line class="ray" x1="0" y1="0" x2="-260" y2="-150" stroke="rgba(245,200,66,0.3)"  stroke-width="0.8" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
-      <line class="ray" x1="0" y1="0" x2="-150" y2="-260" stroke="rgba(245,200,66,0.38)" stroke-width="0.9" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="0"    y2="-300" stroke="rgba(180,130,10,0.35)" stroke-width="1.2"  stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="150"  y2="-260" stroke="rgba(180,130,10,0.26)" stroke-width="0.9" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="260"  y2="-150" stroke="rgba(180,130,10,0.22)" stroke-width="0.8" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="300"  y2="0"    stroke="rgba(180,130,10,0.26)" stroke-width="0.9" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="260"  y2="150"  stroke="rgba(180,130,10,0.18)" stroke-width="0.7" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="150"  y2="260"  stroke="rgba(180,130,10,0.20)"  stroke-width="0.8" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="0"    y2="300"  stroke="rgba(180,130,10,0.14)" stroke-width="0.7" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="-150" y2="260"  stroke="rgba(180,130,10,0.18)" stroke-width="0.8" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="-260" y2="150"  stroke="rgba(180,130,10,0.22)" stroke-width="0.7" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="-300" y2="0"    stroke="rgba(180,130,10,0.26)" stroke-width="0.9" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="-260" y2="-150" stroke="rgba(180,130,10,0.20)"  stroke-width="0.8" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
+      <line class="ray" x1="0" y1="0" x2="-150" y2="-260" stroke="rgba(180,130,10,0.26)" stroke-width="0.9" stroke-dasharray="300" stroke-dashoffset="300" opacity="0"/>
 
       <!-- ── 6 outer lotus petals (teardrop from origin) ── -->
       <!-- rotation set by GSAP to avoid SVG/CSS transform conflict -->
@@ -298,7 +296,7 @@ tl.fromTo('.flare-dot',
 tl.to('.flare-dot', { left: '1700px', opacity: 0, duration: 0.18, ease: 'power2.out' }, 1.8);
 
 // ── Phase 7: Rays fade + logo breathes (2.0–3.95s) ────────
-tl.to('.ray', { opacity: 0.22, duration: 1.2, ease: 'power1.in' }, 2.05);
+tl.to('.ray', { opacity: 0.12, duration: 1.2, ease: 'power1.in' }, 2.05);
 
 // Logo breathing: 2 gentle pulses
 tl.to('.logo-group', { scale: 1.020, duration: 0.65, ease: 'sine.inOut' }, 2.2);

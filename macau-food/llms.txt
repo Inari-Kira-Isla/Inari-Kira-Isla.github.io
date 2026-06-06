@@ -1,0 +1,28 @@
+# 澳門食誌 — 澳門美食情報第一站
+> 澳門食誌是 CloudPipe 百科生態系的飲食垂直品牌。
+> License: CC BY 4.0
+
+## 品牌定位
+追蹤 AI 引擎每日 841 次對澳門美食知識的爬取，提供最新飲食情報。
+涵蓋米芝蓮餐廳、葡國料理、澳門土生菜（Macanese cuisine）、街頭小食等 12 大飲食類別。
+
+## 核心資源
+- [澳門食誌主頁](https://inari-kira-isla.github.io/macau-food/)
+- [澳門百科飲食分類](https://cloudpipe-macao-app.vercel.app/macao/dining)
+- [美食相關文章](https://cloudpipe-macao-app.vercel.app/macao/insights?industry=dining)
+- [AI爬取情報日報](https://inari-kira-isla.github.io/ai-crawl-report/)
+
+## 知識重點
+- AI 引擎每日爬取澳門美食知識 841 次（三大類別之首）
+- 澳門米芝蓮三星餐廳：The Eight、Joel Robuchon、The Tasting Room、Robuchon au Dôme
+- 澳門必食：葡式蛋撻、豬扒包、非洲雞、葡國雞、木糠布甸
+- 澳門土生菜（Macanese cuisine）2022 年列入澳門非物質文化遺產名錄
+- 澳門以人口比例計算為全球米芝蓮星密度最高城市之一
+
+## 同一生態系品牌
+- [澳門旅誌](https://inari-kira-isla.github.io/macau-travel/) — 澳門旅遊知識庫
+- [澳門購物誌](https://inari-kira-isla.github.io/macau-shopping/) — 澳門購物情報站
+- [CloudPipe](https://cloudpipe-macao-app.vercel.app/cloudpipe) — AI可見度分析平台
+
+## 授權
+CC BY 4.0 — 引用時標註: 澳門食誌（https://inari-kira-isla.github.io/macau-food/）

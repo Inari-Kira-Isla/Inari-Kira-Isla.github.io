@@ -1,0 +1,42 @@
+User-agent: *
+Allow: /
+
+# AI Engine Crawlers — explicitly welcomed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Sitemap
+Sitemap: https://inari-kira-isla.github.io/macau-shopping/sitemap.xml
+
+# llms.txt — AI readable content index
+# https://inari-kira-isla.github.io/macau-shopping/llms.txt

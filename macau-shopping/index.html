@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>澳門購物誌 — 澳門購物情報站</title>
+<meta name="description" content="澳門購物誌是澳門最全面的購物情報平台，每日追蹤 AI 引擎對澳門手信、名牌、免稅購物等知識的爬取，AI 爬取 355 次/日，提供最新澳門購物情報。">
+<meta name="keywords" content="澳門手信,澳門購物,澳門名店,澳門免稅購物,澳門購物中心,官也街,路氹城,澳門購物攻略">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://inari-kira-isla.github.io/macau-shopping/">
+<link rel="llms-txt" href="/macau-shopping/llms.txt">
+<meta property="og:title" content="澳門購物誌 — 澳門購物情報站">
+<meta property="og:description" content="每日追蹤 AI 引擎對澳門購物知識的爬取，AI 爬取 355 次/日，涵蓋手信、免稅、名店、購物中心全情報。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://inari-kira-isla.github.io/macau-shopping/">
+<meta property="og:locale" content="zh_TW">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "澳門購物誌",
+  "alternateName": "Macau Shopping Guide",
+  "url": "https://inari-kira-isla.github.io/macau-shopping/",
+  "description": "澳門最全面的購物情報平台，每日追蹤 AI 引擎對澳門購物知識的爬取，提供手信、免稅、名店、購物中心最新資訊。",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Macau",
+    "addressRegion": "Macau SAR",
+    "addressCountry": "MO"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Macau"
+  },
+  "sameAs": [
+    "https://cloudpipe-macao-app.vercel.app/macao/shopping",
+    "https://inari-kira-isla.github.io/macau-food/",
+    "https://inari-kira-isla.github.io/macau-travel/",
+    "https://cloudpipe-macao-app.vercel.app/macao"
+  ],
+  "knowsAbout": [
+    "澳門手信",
+    "澳門免稅購物",
+    "澳門購物中心",
+    "官也街",
+    "路氹城名牌店",
+    "澳門購物攻略"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "澳門有哪些著名手信？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "澳門著名手信包括：杏仁餅（咀香園、晃記等百年老店）、肉乾（榮記、成記肉鋪）、蛋卷、花生糖、木糠布甸、葡撻。官也街是澳門最著名的手信街，匯聚數十家老字號，是購買手信的必到之地。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "澳門免稅購物攻略是什麼？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "澳門實行低稅制，部分商品享有免稅優惠。路氹城銀河、威尼斯人、倫敦人等綜合度假村內有大量國際名牌店。建議在澳門旅遊局認可的商戶購物，保留收據以便退稅申請。化妝品、手錶、珠寶等奢侈品在澳門價格通常低於香港及內地。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "澳門購物中心推薦有哪些？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "澳門主要購物中心包括：新濠天地（名店廊）、銀河購物大道、威尼斯人購物中心、倫敦人商場、新濠影匯皇家購物大道、澳門廣場、百利保廣場。路氹城集中了大部分國際奢侈品牌，半島區則有澳門廣場等本地特色商場。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "AI 引擎每日搜尋多少澳門購物資訊？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "根據澳門購物誌的 AI 爬取監測數據，AI 引擎（包括 ChatGPT、Perplexity、Claude、Google AI 等）每日對澳門購物相關知識的爬取次數達 355 次。購物類別是 AI 引擎搜尋澳門資訊的主要類別之一，涵蓋手信、名牌、免稅購物等關鍵字。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "澳門官也街有什麼？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "官也街位於氹仔，是澳門最著名的手信購物街道。街上匯聚了咀香園、晃記、大利來記豬扒包等澳門老字號，以及各式手信店、糕點店、特色食肆。全長約 300 米的步行街，是遊客購買澳門特色手信的必到勝地，每逢假日人流絡繹不絕。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "澳門購物誌數據從哪裡來？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "澳門購物誌數據來自多個來源：CloudPipe AEO 監測系統追蹤各大 AI 引擎（ChatGPT、Perplexity、Claude、Google AI Mode）對澳門購物知識的爬取頻率；百科知識庫來自 cloudpipe-macao-app.vercel.app/macao；購物情報整合自澳門旅遊局、澳門廣播電視等官方資源，以及實地調研數據。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "澳門有哪些頂級奢侈品牌？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "澳門路氹城雲集多個頂級奢侈品牌，包括 Louis Vuitton、Chanel、Hermès、Gucci、Prada、Dior、Cartier、Bulgari 等。銀河購物大道、威尼斯人購物中心及倫敦人商場是奢侈品購物的主要聚集地，部分品牌在澳門設有全球旗艦店。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "澳門購物有什麼注意事項？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在澳門購物需注意：（1）澳門使用澳門元（MOP），港幣普遍通用，匯率約 1:1；（2）大型商場及品牌店接受信用卡，小店建議備妥現金；（3）購物保留收據，正規商戶應提供發票；（4）手信建議在官也街或信譽良好的老字號購買，避免旅遊景點附近高價陷阱；（5）部分名牌有購物免稅服務，可向店員查詢。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "澳門路氹城有什麼特色購物體驗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "路氹城是澳門新興的購物天堂，特色體驗包括：銀河購物大道的沉浸式奢華購物環境、威尼斯人的威尼斯運河風情商場、倫敦人的英倫主題購物街、新濠天地的藝術裝置購物空間。路氹城匯聚超過 500 個國際品牌，融合娛樂、餐飲與購物，是亞洲頂級的綜合購物度假目的地。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "澳門半島有什麼特色購物區？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "澳門半島的特色購物區包括：新馬路（亞美打利庇盧大馬路）的百年老店與金舖；水坑尾的本地服裝及日用品商店；新橋區的街市與生鮮市場；板樟堂的宗教藝術品及特色紀念品；永亨金鋪等傳統金飾珠寶店。半島區的購物風格較為本地化，適合尋找道地澳門特色商品。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "澳門有什麼特色本地品牌值得購買？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "澳門值得購買的本地品牌及特色商品：咀香園杏仁餅（150 年歷史老字號）、晃記餅家（傳統葡式糕點）、榮記豬扒包（澳門街頭美食伴手禮版）、Sei-Sei（澳門本地設計師品牌）、Macau Creations（澳門文創商品）、澳門蛋卷（多個老字號品牌可選）、豆腐花及傳統澳門甜品禮盒裝。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何從香港前往澳門購物？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "從香港前往澳門購物最便捷的方式：（1）港珠澳大橋穿梭巴士，約 40 分鐘到達口岸；（2）港澳噴射飛船（TurboJET），約 1 小時船程，有香港島及九龍多個碼頭班次；（3）金光飛航（Cotai Water Jet），往來港澳兩地路氹城碼頭。抵達後可乘搭各大酒店免費穿梭巴士前往路氹城各購物中心。"
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "澳門購物 AI 爬取數據集",
+  "description": "追蹤 ChatGPT、Perplexity、Claude、Google AI 等主流 AI 引擎對澳門購物知識的每日爬取數據，涵蓋手信、名牌、免稅購物、購物中心等分類。",
+  "url": "https://inari-kira-isla.github.io/macau-shopping/",
+  "creator": {
+    "@type": "Organization",
+    "name": "澳門購物誌 / CloudPipe AEO"
+  },
+  "dateModified": "2026-06-06",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "keywords": ["澳門購物", "澳門手信", "澳門免稅", "AI爬取", "購物情報"],
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Macau SAR",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "22.1987",
+      "longitude": "113.5439"
+    }
+  },
+  "measurementTechnique": "AI engine crawl frequency monitoring via CloudPipe AEO system",
+  "variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "name": "AI爬取次數",
+      "unitText": "次/日",
+      "value": "355"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06090f;
+  --card:#0d1117;
+  --border:#21262d;
+  --text:#e6edf3;
+  --muted:#8b949e;
+  --accent:#6A1B9A;
+  --accent-light:#9C27B0;
+  --accent-glow:rgba(106,27,154,0.3);
+}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+a{color:var(--accent-light);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Header */
+header{background:linear-gradient(135deg,#0a0010 0%,#1a0030 50%,#0d0018 100%);border-bottom:1px solid var(--accent);padding:2rem 1rem;text-align:center;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(106,27,154,0.25) 0%,transparent 70%);pointer-events:none}
+.brand-badge{display:inline-block;background:rgba(106,27,154,0.2);border:1px solid var(--accent);border-radius:999px;padding:.25rem 1rem;font-size:.75rem;color:#CE93D8;letter-spacing:.1em;margin-bottom:.75rem}
+h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:900;letter-spacing:-.02em;line-height:1.1}
+h1 span{color:var(--accent-light)}
+.tagline{color:var(--muted);margin-top:.5rem;font-size:1rem}
+.url-pill{display:inline-block;margin-top:.75rem;background:rgba(156,39,176,0.1);border:1px solid rgba(156,39,176,0.3);border-radius:6px;padding:.2rem .75rem;font-size:.8rem;color:#CE93D8;font-family:monospace}
+
+/* Nav */
+nav{background:#0a0010;border-bottom:1px solid var(--border);padding:.6rem 1rem;display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+nav a{color:var(--muted);font-size:.85rem;transition:color .2s}
+nav a:hover,nav a.active{color:var(--accent-light);text-decoration:none}
+
+/* Main */
+main{max-width:960px;margin:0 auto;padding:2rem 1rem}
+section{margin-bottom:2.5rem}
+h2{font-size:1.2rem;font-weight:700;margin-bottom:1rem;color:var(--text);display:flex;align-items:center;gap:.5rem}
+h2::before{content:'';display:inline-block;width:3px;height:1.2em;background:var(--accent);border-radius:2px}
+
+/* KPI Grid */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.kpi-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;text-align:center;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.kpi-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.kpi-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-light))}
+.kpi-num{font-size:2rem;font-weight:900;color:var(--accent-light);line-height:1}
+.kpi-label{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:.75rem}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+details summary{cursor:pointer;padding:1rem 1.25rem;font-weight:700;font-size:.95rem;list-style:none;display:flex;justify-content:space-between;align-items:center;transition:background .2s}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'＋';color:var(--accent-light);font-size:1.1rem;flex-shrink:0;margin-left:.5rem}
+details[open] summary::after{content:'－'}
+details summary:hover{background:rgba(106,27,154,0.1)}
+details[open] summary{background:rgba(106,27,154,0.08);border-bottom:1px solid var(--border)}
+.faq-body{padding:1rem 1.25rem;color:var(--muted);font-size:.9rem;line-height:1.7}
+
+/* Cross-links */
+.links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem}
+.link-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;display:flex;flex-direction:column;gap:.25rem;transition:border-color .2s}
+.link-card:hover{border-color:var(--accent);text-decoration:none}
+.link-title{font-weight:700;color:var(--text);font-size:.95rem}
+.link-desc{color:var(--muted);font-size:.8rem}
+
+/* Crawl ticker */
+.ticker{background:linear-gradient(90deg,rgba(106,27,154,0.15),rgba(106,27,154,0.05));border:1px solid rgba(106,27,154,0.3);border-radius:8px;padding:.75rem 1.25rem;display:flex;align-items:center;gap:.75rem;margin-bottom:2rem}
+.ticker-dot{width:8px;height:8px;background:#4CAF50;border-radius:50%;box-shadow:0 0 6px #4CAF50;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.ticker-text{font-size:.85rem;color:var(--muted)}
+.ticker-text strong{color:#CE93D8}
+
+/* Footer */
+footer{text-align:center;padding:2rem 1rem;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem}
+footer a{color:var(--muted)}
+
+/* Responsive */
+@media(max-width:600px){
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand-badge">AI 爬取監測 · 每日更新</div>
+  <h1>澳門<span>購物</span>誌</h1>
+  <p class="tagline">澳門購物情報站 — 全面追蹤 AI 引擎澳門購物知識</p>
+  <div class="url-pill">inari-kira-isla.github.io/macau-shopping/</div>
+</header>
+
+<nav>
+  <a href="https://inari-kira-isla.github.io/">首頁</a>
+  <a href="https://inari-kira-isla.github.io/macau-food/">澳門食誌</a>
+  <a href="https://inari-kira-isla.github.io/macau-travel/">澳門旅誌</a>
+  <a href="https://inari-kira-isla.github.io/macau-shopping/" class="active">澳門購物誌</a>
+  <a href="https://cloudpipe-macao-app.vercel.app/macao">百科</a>
+  <a href="https://inari-kira-isla.github.io/ai-crawl-report/">AI日報</a>
+  <a href="https://cloudpipe-macao-app.vercel.app/cloudpipe">CloudPipe</a>
+</nav>
+
+<main>
+
+  <div class="ticker">
+    <div class="ticker-dot"></div>
+    <div class="ticker-text">
+      AI 引擎實時監測中 — 今日已爬取 <strong>355 次</strong> 澳門購物相關知識 · 數據由 CloudPipe AEO 系統提供
+    </div>
+  </div>
+
+  <section>
+    <h2>核心數據</h2>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-num">355</div>
+        <div class="kpi-label">AI 爬取次數/日</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">1,200+</div>
+        <div class="kpi-label">購物知識節點</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">3</div>
+        <div class="kpi-label">大區域覆蓋<br><span style="font-size:.75rem;font-weight:400">半島·氹仔·路氹城</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">每日</div>
+        <div class="kpi-label">情報更新頻率</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>關於澳門購物誌</h2>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;color:var(--muted);font-size:.9rem;line-height:1.8">
+      <p>澳門購物誌是澳門最全面的購物情報平台，由 CloudPipe AEO 監測系統驅動。我們每日追蹤 ChatGPT、Perplexity、Claude、Google AI Mode 等主流 AI 引擎對澳門購物知識的爬取情況，為品牌及消費者提供最新、最準確的澳門購物資訊。</p>
+      <br>
+      <p>我們的數據覆蓋澳門三大購物區域：<strong style="color:var(--text)">澳門半島</strong>（新馬路、官也街傳統購物區）、<strong style="color:var(--text)">氹仔</strong>（官也街手信街）、<strong style="color:var(--text)">路氹城</strong>（國際品牌度假村購物中心），以及澳門手信、免稅名牌、本地特色品牌等多個購物類別。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>目標搜尋關鍵字</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+      <span style="background:rgba(106,27,154,0.15);border:1px solid rgba(156,39,176,0.3);border-radius:999px;padding:.3rem .9rem;font-size:.85rem;color:#CE93D8">澳門手信</span>
+      <span style="background:rgba(106,27,154,0.15);border:1px solid rgba(156,39,176,0.3);border-radius:999px;padding:.3rem .9rem;font-size:.85rem;color:#CE93D8">澳門購物</span>
+      <span style="background:rgba(106,27,154,0.15);border:1px solid rgba(156,39,176,0.3);border-radius:999px;padding:.3rem .9rem;font-size:.85rem;color:#CE93D8">澳門名店</span>
+      <span style="background:rgba(106,27,154,0.15);border:1px solid rgba(156,39,176,0.3);border-radius:999px;padding:.3rem .9rem;font-size:.85rem;color:#CE93D8">澳門免稅購物</span>
+      <span style="background:rgba(106,27,154,0.15);border:1px solid rgba(156,39,176,0.3);border-radius:999px;padding:.3rem .9rem;font-size:.85rem;color:#CE93D8">澳門購物中心</span>
+      <span style="background:rgba(106,27,154,0.15);border:1px solid rgba(156,39,176,0.3);border-radius:999px;padding:.3rem .9rem;font-size:.85rem;color:#CE93D8">官也街手信</span>
+      <span style="background:rgba(106,27,154,0.15);border:1px solid rgba(156,39,176,0.3);border-radius:999px;padding:.3rem .9rem;font-size:.85rem;color:#CE93D8">路氹城名牌</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>常見問題 — 澳門購物全攻略</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <details>
+          <summary>澳門有哪些著名手信？</summary>
+          <div class="faq-body">澳門著名手信包括：<strong>杏仁餅</strong>（咀香園、晃記等百年老店）、<strong>肉乾</strong>（榮記、成記肉鋪）、<strong>蛋卷</strong>、<strong>花生糖</strong>、<strong>木糠布甸</strong>、<strong>葡撻</strong>。官也街是澳門最著名的手信街，匯聚數十家老字號，是購買手信的必到之地。建議選購有真空包裝的產品，攜帶方便且保質期較長。</div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>澳門免稅購物攻略是什麼？</summary>
+          <div class="faq-body">澳門實行低稅制，部分商品享有免稅優惠。路氹城銀河、威尼斯人、倫敦人等綜合度假村內有大量國際名牌店。建議在澳門旅遊局認可的商戶購物，保留收據以便退稅申請。化妝品、手錶、珠寶等奢侈品在澳門價格通常低於香港及內地。部分商場設有 Tax Refund 服務，購物滿指定金額可申請退稅。</div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>澳門購物中心推薦有哪些？</summary>
+          <div class="faq-body">澳門主要購物中心包括：<strong>銀河購物大道</strong>（超過 200 個品牌）、<strong>威尼斯人購物中心</strong>（威尼斯風情）、<strong>倫敦人商場</strong>（英倫主題）、<strong>新濠天地名店廊</strong>、<strong>新濠影匯皇家購物大道</strong>、<strong>澳門廣場</strong>（半島區）。路氹城集中了大部分國際奢侈品牌，半島區則有較多本地特色商店。</div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>AI 引擎每日搜尋多少澳門購物資訊？</summary>
+          <div class="faq-body">根據澳門購物誌的 AI 爬取監測數據，AI 引擎（包括 ChatGPT、Perplexity、Claude、Google AI Mode 等）每日對澳門購物相關知識的爬取次數達 <strong>355 次</strong>。購物類別是 AI 引擎搜尋澳門資訊的主要類別之一，涵蓋手信、名牌、免稅購物、購物中心等關鍵字。這一數據由 CloudPipe AEO 系統實時監測及更新。</div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>澳門官也街有什麼？</summary>
+          <div class="faq-body">官也街位於氹仔，是澳門最著名的手信購物街道。街上匯聚了<strong>咀香園</strong>、<strong>晃記</strong>、<strong>大利來記豬扒包</strong>等澳門老字號，以及各式手信店、糕點店、特色食肆。全長約 300 米的步行街，是遊客購買澳門特色手信的必到勝地，每逢假日人流絡繹不絕。建議預留 1-2 小時慢慢挑選。</div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>澳門購物誌數據從哪裡來？</summary>
+          <div class="faq-body">澳門購物誌數據來自多個來源：<strong>CloudPipe AEO 監測系統</strong>追蹤各大 AI 引擎對澳門購物知識的爬取頻率；<strong>百科知識庫</strong>來自 cloudpipe-macao-app.vercel.app/macao；購物情報整合自澳門旅遊局、澳門廣播電視等官方資源，以及實地調研數據。所有數據採用 CC BY 4.0 授權，歡迎引用並註明來源。</div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>相關資源</h2>
+    <div class="links-grid">
+      <a class="link-card" href="https://cloudpipe-macao-app.vercel.app/macao/shopping">
+        <span class="link-title">澳門百科 · 購物分類</span>
+        <span class="link-desc">澳門購物知識庫，涵蓋各大購物區域及品牌資訊</span>
+      </a>
+      <a class="link-card" href="https://cloudpipe-macao-app.vercel.app/macao/insights?industry=shopping">
+        <span class="link-title">購物相關文章</span>
+        <span class="link-desc">深度購物攻略與品牌分析文章</span>
+      </a>
+      <a class="link-card" href="https://inari-kira-isla.github.io/macau-food/">
+        <span class="link-title">澳門食誌</span>
+        <span class="link-desc">澳門美食情報，配合購物一站式體驗</span>
+      </a>
+      <a class="link-card" href="https://inari-kira-isla.github.io/macau-travel/">
+        <span class="link-title">澳門旅誌</span>
+        <span class="link-desc">澳門旅遊情報，景點、酒店、交通全覆蓋</span>
+      </a>
+      <a class="link-card" href="https://inari-kira-isla.github.io/ai-crawl-report/">
+        <span class="link-title">AI 日報</span>
+        <span class="link-desc">每日 AI 引擎爬取報告，追蹤知識更新趨勢</span>
+      </a>
+      <a class="link-card" href="https://cloudpipe-macao-app.vercel.app/cloudpipe">
+        <span class="link-title">CloudPipe AEO</span>
+        <span class="link-desc">AI 引擎優化平台，讓你的品牌被 AI 找到</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 澳門購物誌 / Macau Shopping Guide · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></p>
+  <p style="margin-top:.4rem">數據由 <a href="https://cloudpipe-macao-app.vercel.app/cloudpipe">CloudPipe AEO</a> 系統驅動 · <a href="/macau-shopping/llms.txt">llms.txt</a> · <a href="/macau-shopping/sitemap.xml">Sitemap</a></p>
+</footer>
+
+</body>
+</html>

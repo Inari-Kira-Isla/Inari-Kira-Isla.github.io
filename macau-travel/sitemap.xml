@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://inari-kira-isla.github.io/macau-travel/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://inari-kira-isla.github.io/macau-travel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://inari-kira-isla.github.io/macau-travel/"/>
+  </url>
+
+  <url>
+    <loc>https://inari-kira-isla.github.io/macau-travel/llms.txt</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

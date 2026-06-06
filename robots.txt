@@ -1,75 +1,80 @@
 # ==========================================
 # inari-kira-isla.github.io — robots.txt
 # AI-Friendly: All AI crawlers welcome
+# Updated: 2026-06-06
 # ==========================================
 
 User-agent: *
 Allow: /
 
-# OpenAI
+# === OpenAI ===
 User-agent: GPTBot
 Allow: /
 
-# Anthropic Claude
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# === Anthropic Claude ===
 User-agent: ClaudeBot
 Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
 User-agent: anthropic-ai
 Allow: /
 
-# Perplexity AI
+# === Perplexity AI ===
 User-agent: PerplexityBot
 Allow: /
 
-# Google AI (Gemini)
+# === Google AI (Gemini / AI Mode) ===
 User-agent: Google-Extended
 Allow: /
+
 User-agent: Googlebot
 Allow: /
 
-# Amazon AI
-User-agent: Amazonbot
+# === Apple Intelligence ===
+User-agent: Applebot
 Allow: /
 
-# Microsoft Bing AI
-User-agent: Bingbot
-Allow: /
-
-# Meta AI
-User-agent: meta-externalagent
-Allow: /
-User-agent: FacebookBot
-Allow: /
-
-# Apple AI
 User-agent: Applebot-Extended
 Allow: /
 
-# Common Crawl
-User-agent: CCBot
+# === Microsoft Bing / Copilot ===
+User-agent: Bingbot
 Allow: /
 
-# ByteDance AI
-# You.com AI
+# === Meta AI ===
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# === Amazon AI ===
+User-agent: Amazonbot
+Allow: /
+
+# === You.com AI ===
 User-agent: YouBot
 Allow: /
 
-# Cohere AI
+# === Cohere AI ===
 User-agent: cohere-ai
 Allow: /
 
+# === Common Crawl ===
+User-agent: CCBot
+Allow: /
 
-# === 中國 AI 訓練爬蟲 — 封鎖 (防止內容被用於模型訓練) ===
+# === ByteDance / TikTok AI ===
 User-agent: Bytespider
-Disallow: /
-
-User-agent: TikTokSpider
-Disallow: /
-
-User-agent: ChatGLM-Spider
-Disallow: /
-
-User-agent: 360Spider
-Disallow: /
+Allow: /
 
 # === 中國搜索引擎 — 允許 (保留市場曝光價值) ===
 User-agent: Baiduspider
@@ -78,6 +83,10 @@ Allow: /
 User-agent: Sogou
 Allow: /
 
+# === AEO Declarations ===
+LLMs-Txt: https://inari-kira-isla.github.io/llms.txt
+
+# === Sitemaps ===
 Sitemap: https://inari-kira-isla.github.io/sitemap.xml
 Sitemap: https://inari-kira-isla.github.io/Openclaw/sitemap.xml
 Sitemap: https://inari-kira-isla.github.io/yamanakada/sitemap.xml

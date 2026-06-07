@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CloudPipe Design Lab · Day 001 · 2026-06-04</title>
+<meta name="description" content="2026-06-03 工作報告 · Field.io 運動詩學 · Day 001 / ∞" />
+
+<link rel="stylesheet" href="../../shared/fonts.css" />
+<link rel="stylesheet" href="style.css" />
+
+<!-- Three.js (browser global) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.min.js"></script>
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<canvas id="particles" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ===================== FIXED CHROME ===================== -->
+<header class="chrome chrome--top" role="banner">
+  <div class="ident">CloudPipe <strong>Design Lab</strong> — Day 001 / ∞</div>
+  <div class="pagination tabular">
+    <span class="now">01</span><span> / 09</span>
+    <span style="margin-left:18px; color:var(--paper-faint)">·</span>
+    <span class="what" style="margin-left:18px;">Cover</span>
+  </div>
+</header>
+
+<div class="chrome chrome--rail-l">2026 — 06 — 04 · Field.io · 運動詩學</div>
+<div class="chrome chrome--rail-r">Report Of · 2026 — 06 — 03 · Pre-existing Infra 大修日</div>
+
+<footer class="chrome chrome--bottom">
+  <div class="progress" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="tabular">CloudPipe · Internal Brief · Confidential</div>
+</footer>
+
+<main>
+
+<!-- ===================== 00 / COVER ===================== -->
+<section class="scene cover" data-scene="cover" data-label="Cover">
+  <div class="cover__inner">
+    <h1 class="cover__date" aria-label="2026 06 03">
+      <span>2</span><span>0</span><span>2</span><span>6</span>
+      <span class="dot">·</span>
+      <span>0</span><span>6</span>
+      <span class="dot">·</span>
+      <span>0</span><span>3</span>
+    </h1>
+    <div>
+      <p class="cover__sub">
+        Pre-existing<br/>
+        <span class="accent">Infra</span> 大修日<br/>
+        <em>— a quiet rebuild.</em>
+      </p>
+      <p class="cover__meta">
+        CloudPipe Design Lab <span class="pipe">·</span> Day 001
+        <span class="pipe">·</span> Field.io 流派
+        <span class="pipe">·</span> Issue №01
+      </p>
+    </div>
+  </div>
+  <div class="cover__hint">scroll</div>
+</section>
+
+<!-- ===================== § 01 / EXECUTIVE ===================== -->
+<section class="scene" data-scene="executive" data-label="Executive">
+  <div class="scene__label"><span class="num">§ 01</span><span class="rule"></span><span class="what">執行摘要 / Executive</span></div>
+  <h2 class="scene__title">
+    一日，三份 SDD，<br/>
+    <em>七十五</em> 條告示板任務，<br/>
+    一次 <em>130%</em> 的躍升。
+  </h2>
+
+  <div class="exec__metrics">
+    <div class="metric">
+      <div class="metric__num"><span data-count="3" data-decimals="0">0</span></div>
+      <div class="metric__label">份 SDD 通過<br/>DB 架構 · Trust Loop v2 · PPE v3</div>
+    </div>
+    <div class="metric">
+      <div class="metric__num"><span data-count="75" data-decimals="0">0</span><span class="unit">＋</span></div>
+      <div class="metric__label">條告示板任務<br/>觸及 97 條 · 完成 75</div>
+    </div>
+    <div class="metric">
+      <div class="metric__num"><span data-count="130" data-decimals="0">0</span><span class="pct">%</span></div>
+      <div class="metric__label">ai-crawler-intelligence<br/>33 → 76 · 一次性飛躍</div>
+    </div>
+    <div class="metric">
+      <div class="metric__num"><span data-count="5" data-decimals="0">0</span></div>
+      <div class="metric__label">品牌全 publish<br/>FAQ insight · Schema · llms.txt</div>
+    </div>
+  </div>
+
+  <p class="exec__lede">
+    通過 <strong>3 份 SDD</strong>（DB 架構統一 ／ 6 區百科信任閉環 v2 ／ PPE v3）、跑通
+    <strong>75+</strong> 條告示板任務、修完 <strong>11 個 P0 brand AEO infra</strong>，PPE 首輪將
+    ai-crawler-intelligence.html 由 <strong>33→76 分</strong>（+130%），同時為 <strong>5 品牌</strong>
+    全部 publish FAQ insight + Schema + llms.txt，並 hotfix <strong>3 個系統性陷阱</strong>
+    （PostgREST 雙編碼 ／ Cloudflare WAF UA ／ trust_score_audits CHECK 過嚴）。
+  </p>
+</section>
+
+<!-- ===================== § 02 / MILESTONES ===================== -->
+<section class="scene" data-scene="milestones" data-label="Milestones">
+  <div class="scene__label"><span class="num">§ 02</span><span class="rule"></span><span class="what">重大里程碑 / Milestones</span></div>
+
+  <div class="milestones">
+    <aside class="milestones__head">
+      <div class="kicker">3 SDD + 1 戰略原則</div>
+      <h2 class="scene__title" style="font-size:clamp(40px,5vw,72px); margin-bottom:32px;">三份藍圖<br/>定義 D+30。</h2>
+      <p class="pull">
+        「優化品牌 AEO 嘅同時，<br/>
+        連同品牌主頁同時優化。」
+      </p>
+    </aside>
+
+    <ol class="timeline" start="1">
+      <li class="tl-item">
+        <div class="tl-item__index">SDD № 01</div>
+        <h3 class="tl-item__title">DB 架構統一 <em>SDD</em></h3>
+        <p class="tl-item__desc">
+          118 真實 SQLite + Supabase + 446 KiraVault md 統一單一來源；
+          db_paths.py 中央常量表落地（CLAUDE.md Rule #11）；
+          macau.db→macau_kg.db / paperclip.db 拆 3；446 md→pgvector。
+        </p>
+        <div class="tl-item__meta">
+          <span>D+3 / D+14 / D+30</span><span>3 階段驗收</span>
+        </div>
+      </li>
+
+      <li class="tl-item">
+        <div class="tl-item__index">SDD № 02</div>
+        <h3 class="tl-item__title">6 區百科 <em>信任閉環</em> SDD v2</h3>
+        <p class="tl-item__desc">
+          對齊真實 schema（region 大寫 MO / HK / JP / TW / MY / GLOBAL，共 6 區；
+          v1 嘅 KR/VN/IDN/TH 因主庫無此值移除，後續評估）；
+          5 腳本 PASS / 2 表 migration / +11 Hermes jobs；
+          trust_report_generator v1.0.0；Baseline MO 11% · HK 8.5% · JP 3% · TW 5.3%。
+        </p>
+        <div class="tl-item__meta">
+          <span>驗收 2026-06-24</span><span>D+21</span>
+        </div>
+      </li>
+
+      <li class="tl-item">
+        <div class="tl-item__index">SDD № 03</div>
+        <h3 class="tl-item__title">PPE v3 + <em>Master Optimization Loop</em></h3>
+        <p class="tl-item__desc">
+          DETECTION → ITERATION → CONVERGENCE 三層；
+          Haiku → Sonnet → Opus 階梯升級；
+          perfection_queue + RLS + trigger；首跑 4 openclaw_article 入 queue。
+        </p>
+        <div class="tl-item__meta">
+          <span>目標 95% ≥95 分</span><span>D+30 = 07-03</span>
+        </div>
+      </li>
+
+      <li class="tl-item tl-item--principle">
+        <div class="tl-item__index">PRINCIPLE</div>
+        <h3 class="tl-item__title">戰略原則 — <em>同步律</em></h3>
+        <p class="tl-item__desc">
+          優化品牌 AEO 嘅同時，連同品牌主頁同時優化。
+          AEO 內容不再係孤島；FAQ insight、Schema、llms.txt 與品牌站點層共生。
+        </p>
+        <div class="tl-item__meta">
+          <span>適用 5 品牌</span><span>由 06-03 起生效</span>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== § 03 / TECHNICAL OUTPUTS ===================== -->
+<section class="scene" data-scene="outputs" data-label="Outputs">
+  <div class="scene__label"><span class="num">§ 03</span><span class="rule"></span><span class="what">技術產出 / Technical Outputs</span></div>
+  <h2 class="scene__title">七個系統，<br/>一日落地。</h2>
+  <p class="scene__body">按系統分類，所有交付物按時點寫入 commit、jobs.json、migration log。下表為 06-03 24 小時內可追溯產出。</p>
+
+  <div class="outputs">
+    <div class="outputs__row">
+      <div class="outputs__num">01</div>
+      <div class="outputs__sys">6 區 Trust Loop</div>
+      <div class="outputs__detail">
+        <b>5</b> 腳本 PASS <span class="sep">·</span> <b>2</b> 表 migration <span class="sep">·</span> <b>+11</b> Hermes jobs <span class="sep">·</span> trust_report_generator <span class="num">v1.0.0</span>
+        <span class="sep">·</span> Baseline MO <b>11%</b> · HK <b>8.5%</b> · JP <b>3%</b> · TW <b>5.3%</b>
+      </div>
+    </div>
+    <div class="outputs__row">
+      <div class="outputs__num">02</div>
+      <div class="outputs__sys">PPE 完美追求閉環</div>
+      <div class="outputs__detail">
+        <b>5</b> 大組件 <span class="sep">·</span> perfection_queue 表 + RLS + trigger <span class="sep">·</span> <b>+4</b> Hermes jobs
+        <span class="sep">·</span> 首跑 <b>4</b> openclaw_article 入 queue（B 級）
+      </div>
+    </div>
+    <div class="outputs__row">
+      <div class="outputs__num">03</div>
+      <div class="outputs__sys">AEO 閉環</div>
+      <div class="outputs__detail">
+        aeo_article_auto_fix <b>3</b> fn <span class="sep">·</span> aeo_closed_loop_dispatcher <b>700</b> 行
+        <span class="sep">·</span> openclaw <b>50</b> 篇 baseline avg <span class="num">93.62</span>
+        <span class="sep">·</span> ai-crawler <span class="num">33→76</span> commit <code style="color:var(--accent);font-size:0.92em;">7785e6f</code>
+      </div>
+    </div>
+    <div class="outputs__row">
+      <div class="outputs__num">04</div>
+      <div class="outputs__sys">品牌 AEO 救援</div>
+      <div class="outputs__detail">
+        <b>5</b> 品牌 × <b>6</b> FAQ + Article Schema + llms.txt = <span class="num">30</span> FAQ insights publish
+      </div>
+    </div>
+    <div class="outputs__row">
+      <div class="outputs__num">05</div>
+      <div class="outputs__sys">Brand AEO Phase 0</div>
+      <div class="outputs__detail">
+        <b>11</b> P0 全清 <span class="sep">·</span> multi_ai_ranking_verifier / action_executor / mape_kpi
+        <span class="sep">·</span> slug <span class="num">305+368→0</span>
+        <span class="sep">·</span> brand_kg / daemon-safe / onboard
+      </div>
+    </div>
+    <div class="outputs__row">
+      <div class="outputs__num">06</div>
+      <div class="outputs__sys">DB 架構</div>
+      <div class="outputs__detail">
+        db_paths.py <b>114</b> paths <span class="sep">·</span> CLAUDE.md Rule #11
+        <span class="sep">·</span> macau.db → macau_kg.db <span class="sep">·</span> paperclip.db 拆 3
+        <span class="sep">·</span> <b>446</b> md → pgvector
+      </div>
+    </div>
+    <div class="outputs__row">
+      <div class="outputs__num">07</div>
+      <div class="outputs__sys">Hermes jobs.json</div>
+      <div class="outputs__detail">
+        <span class="num">164 → 179</span> <span class="sep">·</span> 新增 <b>+15</b> jobs（enabled:false，按 date-gate 排期啟用）
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== § 04 / HOTFIXES ===================== -->
+<section class="scene" data-scene="hotfix" data-label="Hotfix">
+  <div class="scene__label"><span class="num">§ 04</span><span class="rule"></span><span class="what">踩坑與教訓 / Hotfix Log</span></div>
+  <h2 class="scene__title">四個陷阱，<br/>四次根因斷案。</h2>
+
+  <div class="hotfix">
+    <article class="hotfix__card">
+      <div class="hotfix__index">HOTFIX 01</div>
+      <h3 class="hotfix__title">PostgREST 雙編碼</h3>
+      <div class="hotfix__row">
+        <span class="k">根因</span>
+        <span class="v"><span class="accent-tw" data-typewriter>requests.params 二次 encode → 404</span></span>
+      </div>
+      <div class="hotfix__row">
+        <span class="k">修法</span>
+        <span class="v">直接拼 URL 繞 params，4 腳本 audit 修 3 fn</span>
+      </div>
+      <div class="hotfix__row">
+        <span class="k">擴散</span>
+        <span class="v">已建議 weekly Hermes lint job 防回歸</span>
+      </div>
+    </article>
+
+    <article class="hotfix__card">
+      <div class="hotfix__index">HOTFIX 02</div>
+      <h3 class="hotfix__title">trust_score_audits CHECK 過嚴</h3>
+      <div class="hotfix__row">
+        <span class="k">根因</span>
+        <span class="v"><span class="accent-tw" data-typewriter>entity_type 缺 openclaw_article → 23514 reject</span></span>
+      </div>
+      <div class="hotfix__row">
+        <span class="k">修法</span>
+        <span class="v">Migration apply 4 / 4 PASS（含 INDUSTRY 白名單擴張）</span>
+      </div>
+      <div class="hotfix__row">
+        <span class="k">擴散</span>
+        <span class="v">CHECK constraint 8 → 12 entity type</span>
+      </div>
+    </article>
+
+    <article class="hotfix__card">
+      <div class="hotfix__index">HOTFIX 03</div>
+      <h3 class="hotfix__title">AEO 3 新 fn signature</h3>
+      <div class="hotfix__row">
+        <span class="k">根因</span>
+        <span class="v"><span class="accent-tw" data-typewriter>單參數呼叫 raise — 缺 default 推導</span></span>
+      </div>
+      <div class="hotfix__row">
+        <span class="k">修法</span>
+        <span class="v">加 default + 自動推導，3 fn 全綠</span>
+      </div>
+      <div class="hotfix__row">
+        <span class="k">擴散</span>
+        <span class="v">dispatcher 700 行 wire-up 後 50 篇 baseline 通過</span>
+      </div>
+    </article>
+
+    <article class="hotfix__card">
+      <div class="hotfix__index">HOTFIX 04</div>
+      <h3 class="hotfix__title">Cloudflare WAF UA</h3>
+      <div class="hotfix__row">
+        <span class="k">根因</span>
+        <span class="v"><span class="accent-tw" data-typewriter>api.supabase.com 第 2-3 req 起 403</span></span>
+      </div>
+      <div class="hotfix__row">
+        <span class="k">修法</span>
+        <span class="v">強制 Mozilla browser-like UA</span>
+      </div>
+      <div class="hotfix__row">
+        <span class="k">擴散</span>
+        <span class="v">PostgREST .supabase.co 不受影響，已記入 MEMORY.md</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== § 05 / DATA SNAPSHOT ===================== -->
+<section class="scene" data-scene="snapshot" data-label="Snapshot">
+  <div class="scene__label"><span class="num">§ 05</span><span class="rule"></span><span class="what">數據快照 / Snapshot</span></div>
+  <h2 class="scene__title">數字會說話，<br/>但只在被聽見時。</h2>
+
+  <div class="snapshot">
+    <div>
+      <div class="trustbars__head"><span>Trust Baseline · 6-Region</span><span>%</span></div>
+      <div class="trustbars">
+        <div class="trustbar" data-pct="11">
+          <span class="trustbar__region">MO</span>
+          <span class="trustbar__track"><span class="trustbar__fill"></span></span>
+          <span class="trustbar__pct">11.0 %</span>
+        </div>
+        <div class="trustbar" data-pct="8.5">
+          <span class="trustbar__region">HK</span>
+          <span class="trustbar__track"><span class="trustbar__fill"></span></span>
+          <span class="trustbar__pct">8.5 %</span>
+        </div>
+        <div class="trustbar trustbar--weak" data-pct="3">
+          <span class="trustbar__region">JP</span>
+          <span class="trustbar__track"><span class="trustbar__fill"></span></span>
+          <span class="trustbar__pct">3.0 %</span>
+        </div>
+        <div class="trustbar" data-pct="5.3">
+          <span class="trustbar__region">TW</span>
+          <span class="trustbar__track"><span class="trustbar__fill"></span></span>
+          <span class="trustbar__pct">5.3 %</span>
+        </div>
+        <div class="trustbar__total">
+          <span>Total · 4-region average</span><span><b>6.5 %</b></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="figures">
+      <div>
+        <div class="figure__num"><span data-count="93.62" data-decimals="2">0</span></div>
+        <div class="figure__caption">Openclaw 50 篇平均分<br/>滿分 100 · 1 篇 &lt; 75</div>
+      </div>
+      <div>
+        <div class="figure__num"><span class="from" data-count="33" data-decimals="0">0</span><span class="arrow"> → </span><span data-count="76" data-decimals="0">0</span></div>
+        <div class="figure__caption">ai-crawler-intelligence.html<br/>4/6 fail 全消 · <span class="delta">+43</span> 分</div>
+      </div>
+      <div>
+        <div class="figure__num"><span data-count="30" data-decimals="0">0</span></div>
+        <div class="figure__caption">FAQ insights publish<br/>5 品牌 × 6 FAQ</div>
+      </div>
+      <div>
+        <div class="figure__num"><span data-count="179" data-decimals="0">0</span></div>
+        <div class="figure__caption">Hermes jobs.json<br/>較昨日 +15 · 164 → 179</div>
+      </div>
+      <div>
+        <div class="figure__num"><span data-count="97" data-decimals="0">0</span></div>
+        <div class="figure__caption">告示板 06-03 觸及條數<br/>於 24 小時內</div>
+      </div>
+      <div>
+        <div class="figure__num"><span data-count="75" data-decimals="0">0</span><span class="unit">／97</span></div>
+        <div class="figure__caption">告示板完成 ✅<br/>77.3% complete rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== § 06 / ROADMAP ===================== -->
+<section class="scene" data-scene="roadmap" data-label="Roadmap">
+  <div class="scene__label"><span class="num">§ 06</span><span class="rule"></span><span class="what">未完成 / Date-gated Roadmap</span></div>
+  <h2 class="scene__title">未來六日，<br/>三個 <em>anchor</em>。</h2>
+
+  <div class="roadmap__rail" role="list">
+    <div class="milestone" role="listitem">
+      <div class="milestone__date">06 · 07</div>
+      <div class="milestone__dot"></div>
+      <div class="milestone__title">Openclaw weekly 全站</div>
+      <div class="milestone__note">PPE 全篇打分循環首次跑滿全部 openclaw 內容</div>
+    </div>
+    <div class="milestone" role="listitem">
+      <div class="milestone__date">06 · 08</div>
+      <div class="milestone__dot"></div>
+      <div class="milestone__title">Enable MO + HK Trust</div>
+      <div class="milestone__note">trust loop 第一批 enable · dry-run JP 同步啟動</div>
+    </div>
+    <div class="milestone milestone--anchor" role="listitem">
+      <div class="milestone__date">06 · 10</div>
+      <div class="milestone__dot"></div>
+      <div class="milestone__title">全 enable 11 trust + 4 PPE</div>
+      <div class="milestone__note">第一個 anchor — 所有 trust / PPE 排程齊飛</div>
+    </div>
+    <div class="milestone" role="listitem">
+      <div class="milestone__date">06 · 11</div>
+      <div class="milestone__dot"></div>
+      <div class="milestone__title">PPE 直方圖 + Perplexity D+7 重測</div>
+      <div class="milestone__note">首次有可比性 vanity metric 校正基線</div>
+    </div>
+    <div class="milestone milestone--anchor" role="listitem">
+      <div class="milestone__date">06 · 24</div>
+      <div class="milestone__dot"></div>
+      <div class="milestone__title">6 區 D+21 驗收</div>
+      <div class="milestone__note">Trust loop 第二個 anchor — 6 區百科信任閉環 SDD v2 全面交付</div>
+    </div>
+    <div class="milestone milestone--anchor" role="listitem">
+      <div class="milestone__date">07 · 03</div>
+      <div class="milestone__dot"></div>
+      <div class="milestone__title">PPE D+30 完美驗收</div>
+      <div class="milestone__note">95% ≥ 95 分目標 — PPE v3 收尾</div>
+    </div>
+  </div>
+
+  <div class="roadmap__manual">
+    <h4>Manual Session · 待 CEO 主導</h4>
+    <ul>
+      <li>CloudPipe 復活 IndexNow — cloudpipe.ai 主域名未被搜尋引擎索引（依然懸宕）</li>
+      <li>Mind Cafe + After School Coffee 旗艦 insight — 兩品牌主頁脈絡待補</li>
+      <li>sitemap-insights-{mo, hk, jp, tw}.xml route — Next.js App Router 路由補完</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== § 07 / ACTIONS ===================== -->
+<section class="scene" data-scene="actions" data-label="Actions">
+  <div class="scene__label"><span class="num">§ 07</span><span class="rule"></span><span class="what">CEO 建議行動 / Actions</span></div>
+  <h2 class="scene__title">五條建議，<br/>給 <em>未來 7 日</em>。</h2>
+
+  <div class="actions">
+    <article class="action action--p0">
+      <div class="action__priority">🔴 P0</div>
+      <div class="action__num">01</div>
+      <div>
+        <h3 class="action__title">Trust Loop D+5 dry-run JP</h3>
+        <span class="action__desc">06-08 啟用前必跑 — 預測 JP 3% 區是否有非預期 reject 或 score 漂移。</span>
+      </div>
+      <div class="action__cmd">
+        <code>unified_trust_scorer --region JP --dry-run --limit 500</code>
+      </div>
+    </article>
+
+    <article class="action action--p0">
+      <div class="action__priority">🔴 P0</div>
+      <div class="action__num">02</div>
+      <div>
+        <h3 class="action__title">PPE Coverage Expansion</h3>
+        <span class="action__desc">Vercel MO 10,766 篇 enqueue — PPE 首跑只觸 4 篇，需擴展至全 MO content surface。</span>
+      </div>
+      <div class="action__cmd">
+        <code>perfection_queue enqueue --region MO --limit 10766</code>
+      </div>
+    </article>
+
+    <article class="action action--p1">
+      <div class="action__priority">🟡 P1</div>
+      <div class="action__num">03</div>
+      <div>
+        <h3 class="action__title">Crawler Dashboard 三 Bug</h3>
+        <span class="action__desc">Sessions 永遠 0 ／ llmBots Set 序列化失敗 ／ tooltip 不顯示。三個都係前端側，今週可清。</span>
+      </div>
+      <div class="action__cmd">
+        <code>scripts/fix_crawler_dashboard.py</code>
+      </div>
+    </article>
+
+    <article class="action action--p1">
+      <div class="action__priority">🟡 P1</div>
+      <div class="action__num">04</div>
+      <div>
+        <h3 class="action__title">PostgREST 雙編碼 lint 自動化</h3>
+        <span class="action__desc">將今日 hotfix 提煉成 weekly Hermes job — 主動掃所有腳本 params= 雙 encode 模式。</span>
+      </div>
+      <div class="action__cmd">
+        <code>hermes add postgrest-lint-weekly</code>
+      </div>
+    </article>
+
+    <article class="action action--p2">
+      <div class="action__priority">🟢 P2</div>
+      <div class="action__num">05</div>
+      <div>
+        <h3 class="action__title">5 品牌 D7 baseline check</h3>
+        <span class="action__desc">06-10 觸發前 — 確認 30 FAQ insights 已被各引擎索引，建立可比較基線。</span>
+      </div>
+      <div class="action__cmd">
+        <code>multi_ai_ranking_verifier --brands all --baseline</code>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<section class="scene footer" data-scene="footer" data-label="Footer">
+  <div>
+    <h2 class="footer__hero">
+      明日繼續。<br/>
+      <span class="accent">Day 002 / ∞</span><br/>
+      <em>— a new流派.</em>
+    </h2>
+    <div class="footer__grid">
+      <div>
+        <h5>Credits</h5>
+        <ul>
+          <li>Designed by AI Art Director</li>
+          <li>Field.io 流派</li>
+          <li>CloudPipe Design Lab · 2026-06-04</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Technical</h5>
+        <ul>
+          <li>GSAP 3.12.5 · ScrollTrigger</li>
+          <li>Three.js r160 · WebGL particle field</li>
+          <li>Fraunces · Inter · JetBrains Mono</li>
+          <li>3,400 particles · DPR cap 2</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Navigation</h5>
+        <ul>
+          <li class="disabled">← Day 000 (none)</li>
+          <li><a href="../../index.html">↑ Lab Index</a></li>
+          <li class="disabled">→ Day 002 (流派待定)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer__sig">
+    <span>End of Issue №01</span>
+    <span>CloudPipe <span class="accent">Design</span> Lab · Day 001 / ∞</span>
+    <span>2026 · 06 · 04 · 23:59 HKT</span>
+  </div>
+</section>
+
+</main>
+
+<script src="../../shared/particles.js"></script>
+<script src="motion.js"></script>
+
+</body>
+</html>

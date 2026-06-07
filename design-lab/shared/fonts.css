@@ -1,0 +1,42 @@
+/* CloudPipe Design Lab — Shared Type System
+ * Magazine triad: Serif display × Mono accent × Sans body
+ * All weights served from Google Fonts CDN, fallback to system stack
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+
+:root {
+  --font-display: 'Fraunces', 'Times New Roman', 'Songti SC', serif;
+  --font-body: 'Inter', -apple-system, 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Menlo', monospace;
+
+  /* Field.io 流派 palette */
+  --ink: #0A0A0A;            /* near-black */
+  --ink-2: #141414;          /* card depth */
+  --paper: #F5F1EA;          /* warm off-white */
+  --paper-dim: rgba(245, 241, 234, 0.55);
+  --paper-faint: rgba(245, 241, 234, 0.22);
+  --rule: rgba(245, 241, 234, 0.12);
+
+  /* Single accent — chose the molten red for Field.io energy */
+  --accent: #FF3D2E;
+  --accent-glow: rgba(255, 61, 46, 0.35);
+  --accent-faint: rgba(255, 61, 46, 0.08);
+
+  /* Priority codes — only data, never decoration */
+  --p0: #FF3D2E;
+  --p1: #F5B700;
+  --p2: #00FF88;
+
+  /* Numerics */
+  --num-tab: 'tnum' on, 'lnum' on, 'ss01' on;
+}
+
+/* Tabular numerals everywhere data lives */
+.tabular,
+.metric,
+.figure,
+[data-tab] {
+  font-feature-settings: var(--num-tab);
+  font-variant-numeric: tabular-nums lining-nums;
+}

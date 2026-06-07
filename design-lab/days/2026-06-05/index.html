@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CloudPipe Design Lab — Day 002 · Dashboard清理日</title>
+  <meta name="description" content="CloudPipe Design Lab Day 002 — 2026-06-04 Dashboard 100% 清理完成，Attribution V1 落地，GEO Quad Hit 里程碑。" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── GRID OVERLAY ────────────────────────────────────────────────────── -->
+  <div id="grid-overlay">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- ── CHROME: TOP ─────────────────────────────────────────────────────── -->
+  <header class="chrome chrome--top">
+    <span class="ident">CloudPipe <strong>Design Lab</strong> — Day 002 / ∞</span>
+    <span class="pagination">
+      <span class="now">01</span><span> / 10</span>&nbsp;·&nbsp;<span class="what">Cover</span>
+    </span>
+  </header>
+
+  <!-- ── CHROME: BOTTOM ──────────────────────────────────────────────────── -->
+  <footer class="chrome chrome--bottom">
+    <div class="progress">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <span class="copy">CloudPipe · Internal Brief · Confidential</span>
+  </footer>
+
+  <!-- ── CHROME: LEFT RAIL ────────────────────────────────────────────────── -->
+  <aside class="chrome chrome--rail-l" aria-hidden="true">
+    <span>2026 — 06 — 05 · Brutalist Swiss · Pentagram風</span>
+  </aside>
+
+  <!-- ── CHROME: RIGHT RAIL ───────────────────────────────────────────────── -->
+  <aside class="chrome chrome--rail-r" aria-hidden="true">
+    <span>Report Of · 2026 — 06 — 04 · Dashboard清理日</span>
+  </aside>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <main>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         §00 · COVER
+    ──────────────────────────────────────────────────────────────────────── -->
+    <section class="scene cover" data-scene="cover" data-label="Cover">
+
+      <div class="cover__back">
+        <div class="cover__y-bar"></div>
+      </div>
+
+      <div class="cover__grid-num" aria-hidden="true">
+        <span>Day 002 / ∞</span>
+        <span>Brutalist Swiss</span>
+        <span>Issue № 02</span>
+      </div>
+
+      <div class="cover__inner">
+        <h1 class="cover__date tabular" aria-label="2026 06 04">
+          <span class="char">2</span><span class="char">0</span><span class="char">2</span><span class="char">6</span><span class="char dot">·</span><span class="char">0</span><span class="char">6</span><span class="char dot">·</span><span class="char">0</span><span class="char">4</span>
+        </h1>
+
+        <p class="cover__sub">
+          Dashboard<br/>
+          <span class="accent">100%</span> 清理完成<br/>
+          <em style="font-weight:400;font-style:italic;color:rgba(255,255,255,0.45)">— the debt is settled.</em>
+        </p>
+
+        <div class="cover__meta">
+          <span>CloudPipe Design Lab</span>
+          <span>Day 002</span>
+          <span>Brutalist Swiss</span>
+          <span>Issue №02</span>
+        </div>
+
+        <nav class="cover__nav">
+          <a href="../../index.html">↑ Lab</a>
+          <a href="../2026-06-04/index.html">← Day 001</a>
+        </nav>
+      </div>
+
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         §00.5 · COMMANDER BRIEF
+    ──────────────────────────────────────────────────────────────────────── -->
+    <section class="scene" data-scene="brief" data-label="指揮官摘要">
+
+      <div class="scene__label">
+        <span class="num">§ 00</span>
+        <span class="rule"></span>
+        <span class="what">COMMANDER BRIEF · 前後對比分析</span>
+      </div>
+
+      <h2 class="scene__title">
+        前後對比，<br/><em>全日</em> 洞察。
+      </h2>
+
+      <div class="brief-grid">
+
+        <!-- Card 1: Previous day -->
+        <article class="brief-card brief-card--prev">
+          <div class="brief-card__tag">前日 · 2026-06-03</div>
+          <h3 class="brief-card__title">PPE 修復日 + 百科信任 SDD v2 通過</h3>
+          <ul class="brief-bullets">
+            <li>PPE Loop bug 根因修復（if not payload: break）</li>
+            <li>SDD v2 7區百科信任閉環通過設計門檻</li>
+            <li>Merchant Batch 1+2 共 1,688 records processed</li>
+            <li>PostgREST double-encode hotfix（4腳本審計）</li>
+          </ul>
+          <div class="brief-stats">
+            <span class="stat">~8 commits</span>
+            <span class="stat">SDD v2 通過</span>
+          </div>
+        </article>
+
+        <!-- Card 2: Today -->
+        <article class="brief-card brief-card--today">
+          <div class="brief-card__tag">今日報告 · 2026-06-04</div>
+          <h3 class="brief-card__title">Dashboard 100% 清理 + Attribution V1 + GEO Quad Hit</h3>
+          <ul class="brief-bullets">
+            <li>Dashboard 全面移除 Supabase 直接讀取（12 commits）</li>
+            <li>Attribution 事件系統 V1（9種事件 + session_id）</li>
+            <li>SSG/ISR 靜態生成衝突修復（12條 insight routes）</li>
+            <li>GEO Quad Hit — 4大AI引擎同日全命中里程碑</li>
+          </ul>
+          <div class="brief-stats">
+            <span class="stat">12 commits</span>
+            <span class="stat">Hermes 37.5%</span>
+          </div>
+        </article>
+
+        <!-- Card 3: Analysis -->
+        <article class="brief-card brief-card--analysis">
+          <div class="brief-card__tag">全日分析 + 建議</div>
+          <p class="brief-analysis">
+            今日以<strong>清理技術債</strong>為主軸，成功清除所有 Dashboard 直接 DB 讀取，Attribution V1 亦就緒。但 Hermes 成功率僅 <strong>37.5%</strong>，openclaw-weixin 渠道全面崩潰係最大隱憂。GEO Quad Hit 係重大突破，需趁勢鞏固引用率。
+          </p>
+          <div class="brief-recs">
+            <div class="rec">緊急修復 OpenWeixin 渠道認證（5個 jobs 失效）</div>
+            <div class="rec">驗證 Attribution events + session_id 流通</div>
+            <div class="rec">調查 Meta/Amazon 爬蟲暴跌根因（-62%/-100%）</div>
+          </div>
+        </article>
+
+        <!-- Card 4: Tomorrow -->
+        <article class="brief-card brief-card--tomorrow">
+          <div class="brief-card__tag">明日預測 · 2026-06-05</div>
+          <h3 class="brief-card__title">系統穩定 + 閉環建設日</h3>
+          <ul class="brief-bullets">
+            <li>修復 OpenWeixin 渠道（5個 failed Hermes jobs）</li>
+            <li>驗證 Attribution 基礎設施上線</li>
+            <li>調查爬蟲數據暴跌根因</li>
+            <li>Design Lab 自動生成閉環建立</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         §01 · EXECUTIVE SUMMARY
+    ──────────────────────────────────────────────────────────────────────── -->
+    <section class="scene" data-scene="executive" data-label="Executive">
+
+      <div class="scene__label">
+        <span class="num">§ 01</span>
+        <span class="rule"></span>
+        <span class="what">執行摘要 / Executive</span>
+      </div>
+
+      <h2 class="scene__title">
+        一日，<em>12</em> 個 commit，<br/>三大系統，全面落地。
+      </h2>
+
+      <div class="exec__metrics">
+
+        <div class="metric">
+          <div class="metric__num tabular">
+            <span data-count="12">0</span>
+          </div>
+          <div class="metric__label">個 commits<br/>cloudpipe-macao-app</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric__num tabular">
+            <span data-count="3">0</span>
+          </div>
+          <div class="metric__label">大系統落地<br/>Dashboard · Attribution · SSG</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric__num tabular">
+            <span data-count="9">0</span><span class="unit">種</span>
+          </div>
+          <div class="metric__label">Attribution 事件類型<br/>session_id 跨事件關聯就緒</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric__num tabular">
+            <span data-count="37">0</span><span class="pct">%</span>
+          </div>
+          <div class="metric__label">Hermes 成功率<br/>9/24 jobs · WeChat 渠道崩潰</div>
+        </div>
+
+      </div>
+
+      <p class="exec__lede">
+        2026-06-04 是一個以<strong>清理技術債</strong>為核心的工作日。全日共完成 12 個 commits，成功將 Dashboard 所有直接 Supabase DB 讀取移除，切換至 GitHub Pages 靜態快取架構。Attribution 事件追蹤系統 V1 落地，涵蓋 9 種事件類型。同日達成 <strong>GEO Quad Hit 里程碑</strong>——四大 AI 引擎（Copilot、Google AI Mode、ChatGPT、Perplexity）在同一天全部命中稻荷品牌。
+      </p>
+
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         §02 · MILESTONES
+    ──────────────────────────────────────────────────────────────────────── -->
+    <section class="scene" data-scene="milestones" data-label="Milestones">
+
+      <div class="scene__label">
+        <span class="num">§ 02</span>
+        <span class="rule"></span>
+        <span class="what">重大里程碑 / Milestones</span>
+      </div>
+
+      <h2 class="scene__title">
+        三個系統，<br/><em>今日</em> 落地。
+      </h2>
+
+      <div class="milestones">
+
+        <article class="milestone">
+          <div class="milestone__num">M·01</div>
+          <div class="milestone__body">
+            <h3 class="milestone__title">Dashboard 100% Supabase 清理</h3>
+            <p class="milestone__desc">
+              徹底移除 Dashboard 所有直接 Supabase DB 讀取，切換至 GitHub Pages 靜態快取架構。merchant-discovery、routing-baseline、crawler 三大模組全部完成遷移。fetchCache 策略從 default-cache 修正為 force-no-store，解決 SSR 404 鎖死問題。
+            </p>
+            <div class="milestone__commits">
+              <span class="commit">14e3fb0</span>
+              <span class="commit">195aa1f</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="milestone">
+          <div class="milestone__num">M·02</div>
+          <div class="milestone__body">
+            <h3 class="milestone__title">Attribution 事件追蹤系統 V1</h3>
+            <p class="milestone__desc">
+              建立完整的 Attribution 事件追蹤基礎設施，涵蓋 9 種事件類型。ai_referrals 表加入 session_id 欄位，實現跨事件關聯追蹤。attribution_events migration 完成，為 AI Revenue Attribution L9 鋪路。
+            </p>
+            <div class="milestone__commits">
+              <span class="commit">622013f</span>
+              <span class="commit">fb5fa2a</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="milestone">
+          <div class="milestone__num">M·03</div>
+          <div class="milestone__body">
+            <h3 class="milestone__title">SSG/ISR 靜態生成衝突修復</h3>
+            <p class="milestone__desc">
+              移除 12 條 insight routes 及 4 個 region routes 嘅 force-static 配置，解決 force-static 與 revalidate 不可並存的衝突。加入 dynamicParams=true，徹底修復靜態生成策略錯誤導致的 404 問題。
+            </p>
+            <div class="milestone__commits">
+              <span class="commit">8f97e02</span>
+              <span class="commit">4453c01</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         §03 · TECHNICAL OUTPUTS
+    ──────────────────────────────────────────────────────────────────────── -->
+    <section class="scene" data-scene="outputs" data-label="Outputs">
+
+      <div class="scene__label">
+        <span class="num">§ 03</span>
+        <span class="rule"></span>
+        <span class="what">技術輸出 / Outputs</span>
+      </div>
+
+      <h2 class="scene__title">
+        14 個<br/>commit，全覆蓋。
+      </h2>
+
+      <div class="outputs__header">
+        <span>Category</span>
+        <span>Description</span>
+        <span style="text-align:right">Commit ID</span>
+      </div>
+
+      <div class="outputs__row">
+        <div class="output__brand">Dashboard清理</div>
+        <div class="output__desc">移除 merchant-discovery / routing-baseline / crawler 直接 DB 讀取，切換 GitHub Pages 靜態快取架構</div>
+        <div class="output__commits">
+          <span class="commit">14e3fb0</span>
+          <span class="commit">195aa1f</span>
+        </div>
+      </div>
+
+      <div class="outputs__row">
+        <div class="output__brand">快取修復</div>
+        <div class="output__desc">fetchCache force-no-store 替換 default-cache，days=1 precomputed range 修正，解除 SSR 404 鎖死</div>
+        <div class="output__commits">
+          <span class="commit">da18b9a</span>
+          <span class="commit">74dec89</span>
+          <span class="commit">92f16de</span>
+        </div>
+      </div>
+
+      <div class="outputs__row">
+        <div class="output__brand">SSG/ISR修正</div>
+        <div class="output__desc">移除 12 條 insight routes + 4 個 region routes 的 force-static，加入 dynamicParams=true</div>
+        <div class="output__commits">
+          <span class="commit">8f97e02</span>
+          <span class="commit">4453c01</span>
+        </div>
+      </div>
+
+      <div class="outputs__row">
+        <div class="output__brand">Attribution系統</div>
+        <div class="output__desc">attribution_events migration 完成 + ai_referrals 加入 session_id，9種事件類型跨事件關聯就緒</div>
+        <div class="output__commits">
+          <span class="commit">622013f</span>
+          <span class="commit">fb5fa2a</span>
+        </div>
+      </div>
+
+      <div class="outputs__row">
+        <div class="output__brand">Inari 著陸頁</div>
+        <div class="output__desc">/inari/why-inari 競爭對手差異化定位頁面，覆蓋 7 個競爭維度，強化 AEO 品牌信號</div>
+        <div class="output__commits">
+          <span class="commit">530f1b1</span>
+        </div>
+      </div>
+
+      <div class="outputs__row">
+        <div class="output__brand">Middleware IP追蹤</div>
+        <div class="output__desc">crawler_visits 加入 ip_hash 欄位，升級追蹤精度，配合 P2 數據清洗</div>
+        <div class="output__commits">
+          <span class="commit">4f676f3</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         §04 · HOTFIX LOG
+    ──────────────────────────────────────────────────────────────────────── -->
+    <section class="scene" data-scene="hotfix" data-label="Hotfix">
+
+      <div class="scene__label">
+        <span class="num">§ 04</span>
+        <span class="rule"></span>
+        <span class="what">系統熱修 / Hotfix</span>
+      </div>
+
+      <h2 class="scene__title">
+        四個緊急修復，<br/><em>當日</em> 落地。
+      </h2>
+
+      <div class="hotfix__grid">
+
+        <article class="hotfix__card">
+          <span class="hotfix__badge hotfix__badge--p0">P0</span>
+          <h3 class="hotfix__title">fetchCache='force-no-store'</h3>
+          <p class="hotfix__body">修復 SSR 404 問題，切換靜態生成策略。解決 fetchCache='default-cache' 鎖死 404 至 revalidate 到期的根因。影響範圍：所有 Dashboard 頁面。修復後立即生效，無需重新部署。</p>
+        </article>
+
+        <article class="hotfix__card">
+          <span class="hotfix__badge hotfix__badge--p0">P0</span>
+          <h3 class="hotfix__title">WeChat 渠道認證失效</h3>
+          <p class="hotfix__body">openclaw-weixin 渠道全面失敗，5 個 Hermes jobs 受影響，Hermes 整體成功率拖低至 37.5%。需緊急調查認證狀態，確認 JWT token 是否過期，按 Rule #7 重新建立認證流程。</p>
+        </article>
+
+        <article class="hotfix__card">
+          <span class="hotfix__badge hotfix__badge--p1">P1</span>
+          <h3 class="hotfix__title">SSG Routes 衝突修復</h3>
+          <p class="hotfix__body">移除 force-static 與 revalidate 不可並存的配置。12 條 insight routes + 4 個 region routes 全部更新，加入 dynamicParams=true。遵循 MEMORY.md 中 fetchCache 三層 bug 修復模式。</p>
+        </article>
+
+        <article class="hotfix__card">
+          <span class="hotfix__badge hotfix__badge--p1">P1</span>
+          <h3 class="hotfix__title">Middleware IP Hash</h3>
+          <p class="hotfix__body">crawler_visits ingestion 加入 ip_hash 欄位，升級追蹤精度。配合後續 P2 數據清洗工作，為區分真實用戶與爬蟲流量提供更精確的識別依據。</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         §05 · DATA SNAPSHOT
+    ──────────────────────────────────────────────────────────────────────── -->
+    <section class="scene" data-scene="snapshot" data-label="Snapshot">
+
+      <div class="scene__label">
+        <span class="num">§ 05</span>
+        <span class="rule"></span>
+        <span class="what">數據快照 / Snapshot</span>
+      </div>
+
+      <h2 class="scene__title">
+        系統指標，<br/><em>今日</em> 截點。
+      </h2>
+
+      <div class="trustbars">
+
+        <div class="trustbar" data-pct="11">
+          <div class="trustbar__label">Hermes 成功率</div>
+          <div class="trustbar__track">
+            <div class="trustbar__fill"></div>
+          </div>
+          <div class="trustbar__val">37.5%</div>
+        </div>
+
+        <div class="trustbar trustbar--alert" data-pct="19">
+          <div class="trustbar__label">Hermes 失敗率</div>
+          <div class="trustbar__track">
+            <div class="trustbar__fill"></div>
+          </div>
+          <div class="trustbar__val">62.5%</div>
+        </div>
+
+        <div class="trustbar" data-pct="14">
+          <div class="trustbar__label">Dashboard 快取覆蓋率</div>
+          <div class="trustbar__track">
+            <div class="trustbar__fill"></div>
+          </div>
+          <div class="trustbar__val">100%</div>
+        </div>
+
+        <div class="trustbar" data-pct="30">
+          <div class="trustbar__label">GEO 引擎命中率</div>
+          <div class="trustbar__track">
+            <div class="trustbar__fill"></div>
+          </div>
+          <div class="trustbar__val">4/4</div>
+        </div>
+
+      </div>
+
+      <div class="figures">
+        <div>
+          <div class="figures__num tabular" data-count="23819">0</div>
+          <div class="figures__label">商戶總數</div>
+        </div>
+        <div>
+          <div class="figures__num tabular" data-count="229702">0</div>
+          <div class="figures__label">KG 事實</div>
+        </div>
+        <div>
+          <div class="figures__num tabular" data-count="24">0</div>
+          <div class="figures__label">Hermes 總 Job</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         §06 · ROADMAP
+    ──────────────────────────────────────────────────────────────────────── -->
+    <section class="scene" data-scene="roadmap" data-label="Roadmap">
+
+      <div class="scene__label">
+        <span class="num">§ 06</span>
+        <span class="rule"></span>
+        <span class="what">路線圖 / Roadmap</span>
+      </div>
+
+      <h2 class="scene__title">
+        接下來，<br/><em>三個</em> 重點。
+      </h2>
+
+      <div class="road__items">
+
+        <div class="road__item">
+          <div class="road__when">D+1</div>
+          <div class="road__what">
+            <strong>修復 OpenWeixin 渠道 + 驗證 Attribution 流通</strong>
+            調查 openclaw-weixin 認證狀態，恢復 5 個 failed Hermes jobs。驗證 attribution_events table 及 session_id 欄位正常接收事件，確保 V1 基礎設施完整上線。
+          </div>
+        </div>
+
+        <div class="road__item">
+          <div class="road__when">D+7</div>
+          <div class="road__what">
+            <strong>Attribution Phase 1 完整 Dashboard 上線</strong>
+            建立 Attribution Dashboard，展示 9 種事件類型的實時數據。整合 session_id 跨事件關聯，生成 AI referral → page view → conversion 完整漏斗視圖。
+          </div>
+        </div>
+
+        <div class="road__item">
+          <div class="road__when">D+30</div>
+          <div class="road__what">
+            <strong>AI Revenue Attribution 全鏈路分析 (funnel L9)</strong>
+            實現 AEO 策略 SDD 中定義的 AI Revenue Attribution L9 層，完整追蹤 AI 引擎引用 → 用戶訪問 → 商業轉化的全鏈路。CloudPipe AEO Tool 升級為 Revenue Intelligence Platform。
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         §07 · ACTIONS
+    ──────────────────────────────────────────────────────────────────────── -->
+    <section class="scene" data-scene="actions" data-label="Actions">
+
+      <div class="scene__label">
+        <span class="num">§ 07</span>
+        <span class="rule"></span>
+        <span class="what">行動清單 / Actions</span>
+      </div>
+
+      <h2 class="scene__title">
+        三個行動，<br/><em>明日</em> 執行。
+      </h2>
+
+      <div class="actions">
+
+        <article class="action action--p0">
+          <span class="action__badge">P0</span>
+          <div class="action__content">
+            <h3 class="action__title">緊急修復 OpenWeixin 渠道</h3>
+            <p class="action__body">調查 openclaw-weixin 認證狀態，確認 JWT token 是否過期。恢復 5 個 failed Hermes jobs，預期自動化成功率回升至 80%+。參考 Rule #7：codex exec JWT 過期陷阱，避免靜默失敗。</p>
+          </div>
+        </article>
+
+        <article class="action action--p0">
+          <span class="action__badge">P0</span>
+          <div class="action__content">
+            <h3 class="action__title">檢查爬蟲數據暴跌原因</h3>
+            <p class="action__body">分析 Meta -62% / Amazon -100% 暴跌事件，確認 ip_hash middleware commit (4f676f3) 是否已生效。檢查 crawler_visits 近 48h 記錄，排查數據管道斷裂點。</p>
+          </div>
+        </article>
+
+        <article class="action action--p1">
+          <span class="action__badge">P1</span>
+          <div class="action__content">
+            <h3 class="action__title">上線 Attribution Phase 0 基礎設施</h3>
+            <p class="action__body">驗證 attribution_events table 已正確接收事件，session_id 欄位跨事件關聯正常。建立基本 dashboard 視圖，確認 V1 基礎設施完整度達到 Phase 1 啟動門檻。</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         §08 · FOOTER
+    ──────────────────────────────────────────────────────────────────────── -->
+    <section class="scene footer" data-scene="footer" data-label="Footer">
+
+      <div class="scene__label">
+        <span class="num">§ 08</span>
+        <span class="rule"></span>
+        <span class="what">結尾 / End</span>
+      </div>
+
+      <h2 class="footer__hero">
+        CloudPipe<br/>Design Lab<br/>Day 002
+      </h2>
+
+      <nav class="footer__links">
+        <a href="../2026-06-04/index.html">← Day 001</a>
+        <a href="../../index.html">↑ Lab Index</a>
+      </nav>
+
+      <p class="footer__gen">
+        Generated 2026-06-05 · Brutalist Swiss · GSAP ScrollTrigger · No WebGL
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- GSAP 3.12.5 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9d/6tD8X4mr1xmMGkBbnzTUmYb2F2MElwKg2cHNe8pKEiCDmIBMpb6fkMkc+E7LRxSxjAHQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TfSo/ZAFyFBicptB5rrUAVIDoUxSs0dVWaQGTxGw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="motion.js"></script>
+
+</body>
+</html>

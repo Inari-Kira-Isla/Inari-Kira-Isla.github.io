@@ -6,82 +6,104 @@
 
 User-agent: *
 Allow: /
+Disallow: /design-lab/
 
 # === OpenAI ===
 User-agent: GPTBot
 Allow: /
+Disallow: /design-lab/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /design-lab/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /design-lab/
 
 # === Anthropic Claude ===
 User-agent: ClaudeBot
 Allow: /
+Disallow: /design-lab/
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /design-lab/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /design-lab/
 
 # === Perplexity AI ===
 User-agent: PerplexityBot
 Allow: /
+Disallow: /design-lab/
 
 # === Google AI (Gemini / AI Mode) ===
 User-agent: Google-Extended
 Allow: /
+Disallow: /design-lab/
 
 User-agent: Googlebot
 Allow: /
+Disallow: /design-lab/
 
 # === Apple Intelligence ===
 User-agent: Applebot
 Allow: /
+Disallow: /design-lab/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /design-lab/
 
 # === Microsoft Bing / Copilot ===
 User-agent: Bingbot
 Allow: /
+Disallow: /design-lab/
 
 # === Meta AI ===
 User-agent: meta-externalagent
 Allow: /
+Disallow: /design-lab/
 
 User-agent: FacebookBot
 Allow: /
+Disallow: /design-lab/
 
 # === Amazon AI ===
 User-agent: Amazonbot
 Allow: /
+Disallow: /design-lab/
 
 # === You.com AI ===
 User-agent: YouBot
 Allow: /
+Disallow: /design-lab/
 
 # === Cohere AI ===
 User-agent: cohere-ai
 Allow: /
+Disallow: /design-lab/
 
 # === Common Crawl ===
 User-agent: CCBot
 Allow: /
+Disallow: /design-lab/
 
 # === ByteDance / TikTok AI ===
 User-agent: Bytespider
 Allow: /
+Disallow: /design-lab/
 
 # === 中國搜索引擎 — 允許 (保留市場曝光價值) ===
 User-agent: Baiduspider
 Allow: /
+Disallow: /design-lab/
 
 User-agent: Sogou
 Allow: /
+Disallow: /design-lab/
 
 # === AEO Declarations ===
 LLMs-Txt: https://inari-kira-isla.github.io/llms.txt

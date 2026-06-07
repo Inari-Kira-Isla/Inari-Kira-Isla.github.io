@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CloudPipe Design Lab · Index</title>
+<link rel="stylesheet" href="shared/fonts.css" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--ink); color: var(--paper);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 56px 120px;
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+  }
+  .mast {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--paper-dim);
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .mast strong { color: var(--accent); font-weight: 500; }
+
+  .hero {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 80px;
+    align-items: end;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(56px, 8vw, 128px);
+    line-height: 0.94;
+    letter-spacing: -0.035em;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
+  .hero p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(18px, 1.5vw, 22px);
+    line-height: 1.4;
+    color: var(--paper-dim);
+    max-width: 32ch;
+  }
+
+  .issues {
+    margin-top: 96px;
+    border-top: 1px solid var(--rule);
+  }
+  .issue {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr auto;
+    gap: 56px;
+    align-items: baseline;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none; color: inherit;
+    transition: padding-left 0.4s cubic-bezier(.2,.7,0,1);
+    position: relative;
+  }
+  .issue::before {
+    content: ""; position: absolute; left: -40px; top: 50%;
+    width: 24px; height: 1px; background: var(--accent);
+    transform: scaleX(0); transform-origin: right; transition: transform 0.4s;
+  }
+  .issue:hover { padding-left: 20px; }
+  .issue:hover::before { transform: scaleX(1); }
+  .issue__num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    font-feature-settings: 'tnum';
+  }
+  .issue__title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+  .issue__title em { color: var(--accent); font-style: italic; }
+  .issue__meta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--paper-dim);
+    line-height: 1.5;
+  }
+  .issue__meta b { color: var(--paper); }
+  .issue__arrow {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--paper-dim);
+    transition: transform 0.4s, color 0.4s;
+  }
+  .issue:hover .issue__arrow { color: var(--accent); transform: translateX(8px); }
+
+  .issue--upcoming {
+    color: var(--paper-faint);
+    cursor: default;
+    pointer-events: none;
+  }
+  .issue--upcoming .issue__num { color: var(--paper-faint); }
+  .issue--upcoming .issue__title { color: var(--paper-faint); }
+
+  .colophon {
+    margin-top: auto;
+    padding-top: 56px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--paper-faint);
+    display: flex; justify-content: space-between;
+  }
+  .colophon .accent { color: var(--accent); }
+
+  @media (max-width: 800px) {
+    .wrap { padding: 56px 24px 80px; }
+    .hero { grid-template-columns: 1fr; gap: 32px; }
+    .issue { grid-template-columns: 1fr; gap: 12px; }
+    .issue::before { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="mast">
+    <span>CloudPipe <strong>Design Lab</strong></span>
+    <span>Editor · Kira (Joe Cheok)</span>
+    <span>Founded 2026-06-04</span>
+  </div>
+
+  <section class="hero">
+    <h1>每日工作報告 ／<br/><em>設計即洞察</em>。</h1>
+    <p>
+      每日一個流派，<br/>
+      將前日工作報告轉化為<br/>
+      高保真視覺敘事。<br/>
+      Day 004 / ∞ — 持續學習閉環。
+    </p>
+  </section>
+
+  <section class="issues" role="list">
+    <a class="issue" href="days/2026-06-04/index.html" role="listitem">
+      <div class="issue__num">№ 001</div>
+      <div class="issue__title">Pre-existing Infra <em>大修日</em></div>
+      <div class="issue__meta">
+        <b>2026 · 06 · 04</b><br/>
+        Field.io 運動詩學 · WebGL · GSAP
+      </div>
+      <div class="issue__arrow">→</div>
+    </a>
+
+    <a class="issue" href="days/2026-06-05/index.html" role="listitem">
+      <div class="issue__num">№ 002</div>
+      <div class="issue__title">系統免疫設計 <em>根因日</em></div>
+      <div class="issue__meta">
+        <b>2026 · 06 · 04</b><br/>
+        Brutalist Swiss · GSAP ScrollTrigger · No WebGL
+      </div>
+      <div class="issue__arrow">→</div>
+    </a>
+
+    <a class="issue" href="days/2026-06-06/index.html" role="listitem">
+      <div class="issue__num">№ 003</div>
+      <div class="issue__title">主 App 實現多項關鍵修復：Dashboard 新增 AI 爬蟲趨勢圖、完善用戶訪問追蹤，同時修正</div>
+      <div class="issue__meta">
+        <b>2026 · 06 · 05</b><br/>
+        Magazine Editorial · GSAP ScrollTrigger
+      </div>
+      <div class="issue__arrow">→</div>
+    </a>
+
+    <a class="issue" href="days/2026-06-07/index.html" role="listitem">
+      <div class="issue__num">№ 004</div>
+      <div class="issue__title">**全面強化 AEO 權威性佈局，完成 11 節點網絡集群整合，同時修補所有 HIGH/MEDIUM</div>
+      <div class="issue__meta">
+        <b>2026 · 06 · 06</b><br/>
+        原研哉 Kenya Hara · GSAP ScrollTrigger
+      </div>
+      <div class="issue__arrow">→</div>
+    </a>
+
+    <div class="issue issue--upcoming" role="listitem">
+      <div class="issue__num">№ 005</div>
+      <div class="issue__title">明日預告 — <em>流派待定</em></div>
+      <div class="issue__meta">
+        明日<br/>
+        Pool: Field.io 運動詩學 · Brutalist Swiss · Magazine Editorial
+      </div>
+      <div class="issue__arrow">·</div>
+    </div>
+
+
+    <div class="issue__title">明日預告 — <em>流派待定</em></div>
+      <div class="issue__meta">
+        明日<br/>
+        Pool: Field.io 運動詩學 · Brutalist Swiss
+      </div>
+      <div class="issue__arrow">·</div>
+    </div>
+
+
+    <div class="issue__title">明日預告 — <em>流派待定</em></div>
+      <div class="issue__meta">
+        明日<br/>
+        Pool: Magazine Editorial · Kenya Hara · Neri Oxman
+      </div>
+      <div class="issue__arrow">·</div>
+    </div>
+  </section>
+
+  <div class="colophon">
+    <span>CloudPipe Design <span class="accent">Lab</span></span>
+    <span>10 流派 Rotation Pool · 5 維度自評 · CEO 反饋閉環</span>
+    <span>~/.openclaw/design-lab/</span>
+  </div>
+
+</div>
+
+</body>
+</html>

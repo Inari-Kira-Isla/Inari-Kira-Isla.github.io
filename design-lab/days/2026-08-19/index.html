@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>CloudPipe Design Lab · Day 065 · 2026-08-18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="grid-overlay"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<div class="chrome-top">
+  <span>CloudPipe <strong style="color:#FFE500">Design Lab</strong></span>
+  <span style="color:rgba(255,255,255,.4)">Day 065 · 2026-08-18</span>
+  <span style="color:rgba(255,255,255,.4)">Neri Oxman 仿生</span>
+</div>
+<div class="chrome-bottom">
+  <div class="progress">
+    <span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+  </div>
+  <div class="pagination"><span class="now">01</span> / 09 &nbsp;·&nbsp; <span class="what">Cover</span></div>
+</div>
+
+<div class="chrome-left">CloudPipe · Design Lab · Day 065</div>
+<div class="chrome-right">© 2026 · 2026-08-19</div>
+
+<div class="wrap">
+
+<!-- ─── COVER ─── -->
+<section data-scene="0" data-label="Cover" class="scene cover">
+  <div style="display:flex;gap:16px;margin-bottom:40px;align-items:center;">
+    <a href="../../index.html" style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(0,0,0,.4);text-decoration:none;">↑ Lab Index</a>
+    <a href="../2026-08-17/index.html" style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(0,0,0,.4);text-decoration:none;">← Day 064 · 2026-08-17</a>
+  </div>
+  <div class="cover__date">
+    <span class="char">2</span><span class="char">0</span><span class="char">2</span><span class="char">6</span><span class="char">·</span><span class="char">0</span><span class="char">8</span><span class="char">·</span><span class="char">1</span><span class="char">8</span>
+  </div>
+  <div class="cover__sub">Day 065 · 全線系統「大搞清潔」：修復 Rule #11 違規、清理五個月積壓腳本、停止追蹤運行日誌，主 App 加強 Fact Check 類型安全，同時 Landing</div>
+  <div class="cover__meta">
+    <span>Neri Oxman 仿生</span>
+    <span>0 commits</span>
+    <span>Hermes 85%</span>
+    <span>Auto-Generated 2026-08-19</span>
+  </div>
+</section>
+
+<!-- ─── SCENE 1: 指揮官摘要 ─── -->
+<section data-scene="1" data-label="指揮官摘要" class="scene">
+  <div class="scene__label"><span class="rule"></span>COMMANDER BRIEF · 前後對比分析</div>
+  <h2 class="scene__title">指揮官<br/>摘要</h2>
+
+  <div class="brief-grid">
+
+    <div class="brief-card brief-card--prev">
+      <div class="brief-card__tag">前日 · 2026-08-17</div>
+      <div class="brief-card__title">**主App 完成 Mind Cafe FAQ 內容優化 + Landing 發佈 AEO 分析報告，Hermes 自動化有 3 個 jobs 超時需檢查。**</div>
+      <ul class="brief-bullets"><li>**主App 完成 Mind Cafe FAQ 內容優化 + Landing 發佈 AEO 分析報告，Hermes 自動</li></ul>
+      <div class="brief-stats">
+        <span class="stat">0 commits</span>
+        <span class="stat">Hermes 85%</span>
+      </div>
+    </div>
+
+    <div class="brief-card brief-card--today">
+      <div class="brief-card__tag">今日報告 · 2026-08-18</div>
+      <div class="brief-card__title">全線系統「大搞清潔」：修復 Rule #11 違規、清理五個月積壓腳本、停止追蹤運行日誌，主 App 加強 Fact Check 類型安全，同時 Landing</div>
+      <ul class="brief-bullets"><li>Rule #11 全部合規</li>
+<li>五個月積壓清零</li>
+<li>運行日誌全面停止追蹤</li>
+<li>Fact Check 數據結構文檔化</li></ul>
+      <div class="brief-stats">
+        <span class="stat">0 commits</span>
+        <span class="stat">Hermes 85%</span>
+      </div>
+    </div>
+
+    <div class="brief-card brief-card--analysis">
+      <div class="brief-card__tag">全日分析 + 建議</div>
+      <div class="brief-analysis">今日完成 0 commits，Hermes 成功率 85%。全線系統「大搞清潔」：修復 Rule #11 違規、清理五個月積壓腳本、停止追蹤運行日誌，主 App 加強 Fact Check 類型安全，同時 Landing</div>
+      <div class="brief-recs"></div>
+    </div>
+
+    <div class="brief-card brief-card--tomorrow">
+      <div class="brief-card__tag" style="color:rgba(255,255,255,.4)">明日預測 · 2026-08-19</div>
+      <div class="brief-card__title" style="color:#fff">Tomorrow's Agenda</div>
+      <ul class="brief-bullets"><li>跟進今日遺留事項</li>
+<li>監控系統穩定性</li>
+<li>繼續 AEO 優化</li></ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── SCENE: 成長總結 ─── -->
+<section data-scene="1b" data-label="成長總結" class="scene growth-scene">
+  <div class="scene__label"><span class="rule"></span>GROWTH SUMMARY · 對比基準 snapshot · 2026-08-17 · DETERMINISTIC</div>
+  <h2 class="scene__title">成長<br/>總結</h2>
+
+  <div class="growth-block">
+    <div class="growth-block__head">① 核心資產增量</div>
+    <div class="growth-grid"><div class="growth-card">
+  <div class="growth-card__val">236,735<span class="growth-card__delta growth-card__delta--flat">— 0</span></div>
+  <div class="growth-card__label">KNOWLEDGE FACTS</div>
+  
+</div><div class="growth-card">
+  <div class="growth-card__val">38,942<span class="growth-card__delta growth-card__delta--up">▲ 146</span></div>
+  <div class="growth-card__label">PUBLISHED INSIGHTS</div>
+  
+</div><div class="growth-card">
+  <div class="growth-card__val">41,600<span class="growth-card__delta growth-card__delta--up">▲ 153</span></div>
+  <div class="growth-card__label">TRUST≥70</div>
+  
+</div><div class="growth-card">
+  <div class="growth-card__val">96.99%<span class="growth-card__delta growth-card__delta--flat">— 0</span></div>
+  <div class="growth-card__label">SOURCE_URL 覆蓋</div>
+  
+</div><div class="growth-card">
+  <div class="growth-card__val">7,191<span class="growth-card__delta growth-card__delta--flat">— 0</span></div>
+  <div class="growth-card__label">官方權威事實</div>
+  
+</div><div class="growth-card">
+  <div class="growth-card__val">1,962<span class="growth-card__delta growth-card__delta--up">▲ 41</span></div>
+  <div class="growth-card__label">DRAFT 待審</div>
+  
+</div></div>
+  </div>
+
+  <div class="growth-block">
+    <div class="growth-block__head">② 百科生態系 / KG 成長</div>
+    <div class="growth-grid"><div class="growth-card">
+  <div class="growth-card__val">40<span class="growth-card__delta growth-card__delta--flat">— 0</span></div>
+  <div class="growth-card__label">語義邊 (object_entity_id)</div>
+  
+</div><div class="growth-card">
+  <div class="growth-card__val">MO 17,647 · HK 10,501 · JP 17,981 · TW 10,003 · GLOBAL 1,654 · NULL 7,809</div>
+  <div class="growth-card__label">INSIGHTS BY REGION</div>
+  
+</div><div class="growth-card">
+  <div class="growth-card__val">MACAU 11,348 · HK 17,636 · JAPAN 21,994</div>
+  <div class="growth-card__label">本機百科文章</div>
+  
+</div></div>
+  </div>
+
+  <div class="growth-block">
+    <div class="growth-block__head">③ 北極星 Absorption</div>
+    <div class="growth-grid"><div class="growth-card">
+  <div class="growth-card__val">—<span class="growth-card__delta growth-card__delta--flat">— N/A</span></div>
+  <div class="growth-card__label">ABSORPTION (—)</div>
+  <div class="growth-card__sub">—/— · T1 — T2 — T3 —</div>
+</div><div class="growth-card">
+  <div class="growth-card__val">200<span class="growth-card__delta growth-card__delta--up">▲ 7</span></div>
+  <div class="growth-card__label">AI CITATIONS 7D</div>
+  
+</div><div class="growth-card">
+  <div class="growth-card__val">68<span class="growth-card__delta growth-card__delta--up">▲ 4</span></div>
+  <div class="growth-card__label">CLOUDPIPE 命中</div>
+  
+</div></div>
+  </div>
+
+  <div class="growth-block">
+    <div class="growth-block__head">④ 閉環健康</div>
+    <div class="growth-grid"><div class="growth-card">
+  <div class="growth-card__val">open 0 · generating 0 · answered 0 · done 43 · dropped 37<span class="growth-card__delta growth-card__delta--flat">— 0</span></div>
+  <div class="growth-card__label">DEMAND QUEUE</div>
+  
+</div><div class="growth-card">
+  <div class="growth-card__val">834 entries<span class="growth-card__delta growth-card__delta--up">▲ 87</span></div>
+  <div class="growth-card__label">OUTCOME LEDGER</div>
+  <div class="growth-card__sub">verified 29 (3.5%)</div>
+</div><div class="growth-card">
+  <div class="growth-card__val">100<span class="growth-card__delta growth-card__delta--down">▼ 26</span></div>
+  <div class="growth-card__label">告示板 OPEN</div>
+  <div class="growth-card__sub">P0 29 · 🔒 0</div>
+</div></div>
+  </div>
+
+  <div class="growth-block">
+    <div class="growth-block__head">⑤ 明日計劃方向</div>
+    <div class="growth-plan"><div class="growth-plan__item">[OPERATOR] [P1] 🔴 [Inari Shorts] 渲染成功但上傳中斷，需手動補上傳</div><div class="growth-plan__item">[P0] 🔴 security [SECURITY] apify_competitor_analysis.py hardcode token — runtime 已清但 git history 曝露   — 2026-08-15 新查證：明</div><div class="growth-plan__item">[P1] 🟡 [bulletin-guard] [OPERATOR] critic 覆核告示板守衛最後一輪（archiver 接線）</div><div class="growth-plan__item">[P1] 🟡 [HANDOFF-HEALTH] [HANDOFF-HEALTH] 1 項 FAIL：H2</div><div class="growth-plan__item">[P1] 🟡 [CLOSURE-RATE] handoff-doc-health 來源 7 日窗零關單率 （15m）</div></div>
+  </div>
+
+  <div class="growth-block">
+    <div class="growth-block__head">⑥ 質量紅線（應全 0 = 健康）</div>
+    <div class="growth-redlines"><div class="growth-redline growth-redline--alert"><span class="growth-redline__mark">🔴</span><span>今日新 publish 但 trust&amp;lt;70：<strong>6</strong> 需審查</span></div><div class="growth-redline growth-redline--ok"><span class="growth-redline__mark">✅</span><span>今日新增 KF 缺 source_url：0</span></div></div>
+  </div>
+
+</section>
+<!-- ─── SCENE 2: 執行指標 ─── -->
+<section data-scene="2" data-label="執行指標" class="scene">
+  <div class="scene__label"><span class="rule"></span>EXECUTION METRICS</div>
+  <h2 class="scene__title">執行<br/>指標</h2>
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric__val" data-count="0">0</div>
+      <div class="metric__unit">Commits</div>
+      <div class="metric__label">今日代碼推送</div>
+    </div>
+    <div class="metric">
+      <div class="metric__val" data-count="4">4</div>
+      <div class="metric__unit">Milestones</div>
+      <div class="metric__label">重大里程碑</div>
+    </div>
+    <div class="metric">
+      <div class="metric__val" data-count="17">17</div>
+      <div class="metric__unit">Hermes ✓</div>
+      <div class="metric__label">自動化成功 job</div>
+    </div>
+    <div class="metric">
+      <div class="metric__val" data-count="85" data-decimals="0">85</div>
+      <div class="metric__unit">% Success</div>
+      <div class="metric__label">Hermes 成功率</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SCENE 3: 里程碑 ─── -->
+<section data-scene="3" data-label="里程碑" class="scene">
+  <div class="scene__label"><span class="rule"></span>MILESTONES</div>
+  <h2 class="scene__title">重大<br/>里程碑</h2>
+  
+<div class="milestone">
+  <div class="milestone__num">01</div>
+  <div class="milestone__text">Rule #11 全部合規</div>
+</div>
+<div class="milestone">
+  <div class="milestone__num">02</div>
+  <div class="milestone__text">五個月積壓清零</div>
+</div>
+<div class="milestone">
+  <div class="milestone__num">03</div>
+  <div class="milestone__text">運行日誌全面停止追蹤</div>
+</div>
+<div class="milestone">
+  <div class="milestone__num">04</div>
+  <div class="milestone__text">Fact Check 數據結構文檔化</div>
+</div>
+</section>
+
+<!-- ─── SCENE 4: 技術輸出 ─── -->
+<section data-scene="4" data-label="技術輸出" class="scene">
+  <div class="scene__label"><span class="rule"></span>TECHNICAL OUTPUTS</div>
+  <h2 class="scene__title">技術<br/>輸出</h2>
+  
+<div class="outputs__row">
+  <div class="outputs__tag">🟢 CloudPipe 主 App</div>
+  <div class="outputs__desc">| Commit | 動作類型 | 內容 |
+|--------|----------|------|
+| `0cab2f6` | Chore | 更新 llms.txt 裏嘅 AI 爬蟲報告連結 |</div>
+  <div class="outputs__commit">→</div>
+</div>
+<div class="outputs__row">
+  <div class="outputs__tag">🟢 CloudPipe Landing</div>
+  <div class="outputs__desc">| Commit | 動作類型 | 內容 |
+|--------|----------|------|
+| `81c9903` | Report | AEO 分析 report |
+| `cfbc07</div>
+  <div class="outputs__commit">→</div>
+</div>
+<div class="outputs__row">
+  <div class="outputs__tag">🟢 系統腳本（Sysadmin）</div>
+  <div class="outputs__desc">呢日 commitments 最多，分幾類：
+
+**🔧 修復類：**
+| Commit | 內容 |
+|--------|------|
+| `4482b8c70` | post_image_补图：f</div>
+  <div class="outputs__commit">→</div>
+</div>
+<div class="outputs__row">
+  <div class="outputs__tag">Hermes Jobs 結果</div>
+  <div class="outputs__desc">| 狀態 | 數量 |
+|------|------|
+| ✅ 成功 | 17 |
+| ❌ 失敗 | 3 |</div>
+  <div class="outputs__commit">→</div>
+</div>
+</section>
+
+<!-- ─── SCENE 5: 系統快照 ─── -->
+<section data-scene="5" data-label="數據快照" class="scene">
+  <div class="scene__label"><span class="rule"></span>SYSTEM SNAPSHOT</div>
+  <h2 class="scene__title">數據<br/>快照</h2>
+  <div class="trustbar" data-pct="85">
+    <div class="trustbar__label"><span>Hermes 成功率</span><span>85%</span></div>
+    <div class="trustbar__track"><div class="trustbar__fill"></div></div>
+  </div>
+  <div class="trustbar trustbar--alert" data-pct="15">
+    <div class="trustbar__label"><span>Hermes 失敗率</span><span>15%</span></div>
+    <div class="trustbar__track"><div class="trustbar__fill"></div></div>
+  </div>
+  <div class="figures">
+    <div>
+      <div class="figures__val">23,889</div>
+      <div class="figures__label">商戶總數</div>
+    </div>
+    <div>
+      <div class="figures__val">236,735</div>
+      <div class="figures__label">KG 事實</div>
+    </div>
+    <div>
+      <div class="figures__val">20</div>
+      <div class="figures__label">Hermes 總 Job</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SCENE 6: 行動清單 ─── -->
+<section data-scene="6" data-label="行動清單" class="scene">
+  <div class="scene__label"><span class="rule"></span>ACTION ITEMS</div>
+  <h2 class="scene__title">行動<br/>清單</h2>
+  
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="scene footer" data-scene="7" data-label="Footer">
+  <div class="footer__hero">CloudPipe<br/><em style="font-style:italic;color:#FFE500">Design Lab</em><br/>Day 065</div>
+  <div class="footer__meta">
+    <span>© 2026 CloudPipe / Kira (Joe Cheok)</span>
+    <span>2026-08-18 → 2026-08-19</span>
+    <span>Auto-generated · Neri Oxman 仿生</span>
+  </div>
+</footer>
+
+</div><!-- .wrap -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="motion.js"></script>
+
+</body>
+</html>
